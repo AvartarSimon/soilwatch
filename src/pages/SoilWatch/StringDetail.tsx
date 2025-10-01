@@ -16,6 +16,7 @@ import {
   IconButton,
   MenuItem,
   Paper,
+  Slider,
   Table,
   TableBody,
   TableCell,
@@ -86,11 +87,20 @@ const StringDetail: React.FC = () => {
   });
 
   // Get selectedDay from navigation state, default to latest day
-  const selectedDay = useMemo(() => {
-    return (location.state as any)?.selectedDay || (dailyData.length > 0 ? dailyData[dailyData.length - 1].day : 30);
-  }, [location.state, dailyData]);
+  const [selectedDay, setSelectedDay] = useState(() => (location.state as any)?.selectedDay || (dailyData.length > 0 ? dailyData[dailyData.length - 1].day : 30));
 
-  // State for add fault dialog
+  const maxDay = dailyData.length > 0 ? dailyData[dailyData.length - 1].day : 30;
+const cleaningDays = useMemo(() => dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day), [dailyData]);
+
+const today = new Date();
+const subtractDays = (date: Date, days: number) => {
+  const result = new Date(date);
+  result.setDate(result.getDate() - days);
+  return result;
+};
+const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+// State for add fault dialog
   const [openAddFault, setOpenAddFault] = useState(false);
   const [newFault, setNewFault] = useState({
     type: "",
@@ -625,7 +635,7 @@ const StringDetail: React.FC = () => {
               justifyContent: "center",
             }}
           >
-            {/* Back button and header in top left */}
+            {/* Back button, header, and day slider in top left */}
             <Box
               sx={{
                 position: "absolute",
@@ -635,6 +645,7 @@ const StringDetail: React.FC = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: 2,
+                width: "80%",
               }}
             >
               <IconButton
@@ -647,18 +658,28 @@ const StringDetail: React.FC = () => {
               >
                 <ArrowBack />
               </IconButton>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                <Typography variant="h5" sx={{ fontWeight: 600, color: "#1C1C1C" }}>
-                  {stringData.name}
-                </Typography>
-                <Chip
-                  icon={stringData.status === 1 ? <CheckCircle /> : <Warning />}
-                  label={stringData.status === 1 ? "Online" : "Offline"}
-                  color={stringData.status === 1 ? "success" : "error"}
-                  variant="outlined"
-                  size="small"
+              <Typography variant="h5" sx={{ fontWeight: 600, color: "#1C1C1C" }}>
+                {stringData.name}
+              </Typography>
+              <Chip
+                icon={stringData.status === 1 ? <CheckCircle /> : <Warning />}
+                label={stringData.status === 1 ? "Online" : "Offline"}
+                color={stringData.status === 1 ? "success" : "error"}
+                variant="outlined"
+                size="small"
+              />
+              <Box sx={{ flexGrow: 1, px: 2 }}>
+                <Slider
+                  value={selectedDay}
+                  onChange={(_, value) => setSelectedDay(value as number)}
+                  min={1}
+                  max={maxDay}
+                  step={1}
+                  valueLabelDisplay="auto"
+                  valueLabelFormat={(value) => `Day ${value} (${formatDate(subtractDays(today, maxDay - value))})`}
+                  marks={cleaningDays.map((day) => ({ value: day, label: '🧽' }))}
+                  sx={{ color: "#1976D2" }}
                 />
-                <Chip label={`Day ${selectedDay}`} color="primary" variant="outlined" size="small" />
               </Box>
             </Box>
 
