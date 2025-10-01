@@ -1,0 +1,7075 @@
+{
+  "parameters": [
+    {
+      "name": "Nominal Soiling Rate",
+      "currentValue": 0.15,
+      "units": "%/day"
+    },
+    {
+      "name": "Rate Variance",
+      "currentValue": 0.05,
+      "units": "%/day"
+    },
+    {
+      "name": "Cleaning Interval",
+      "currentValue": 14,
+      "units": "days"
+    },
+    {
+      "name": "Cleaning Efficiency",
+      "currentValue": 0.97,
+      "units": "rate"
+    },
+    {
+      "name": "Cleaning Variation",
+      "currentValue": 0.03,
+      "units": "rate"
+    },
+    {
+      "name": "Failure Rate",
+      "currentValue": 0.01,
+      "units": "rate"
+    },
+    {
+      "name": "Recovery Time",
+      "currentValue": 2,
+      "units": "days"
+    }
+  ],
+  "strings": [
+    {
+      "id": "string-1",
+      "name": "String 1",
+      "performance": 95.2,
+      "status": 0
+    },
+    {
+      "id": "string-2",
+      "name": "String 2",
+      "performance": 87.5,
+      "status": 0
+    },
+    {
+      "id": "string-3",
+      "name": "String 3",
+      "performance": 92.1,
+      "status": 0
+    },
+    {
+      "id": "string-4",
+      "name": "String 4",
+      "performance": 78.9,
+      "status": 0
+    },
+    {
+      "id": "string-5",
+      "name": "String 5",
+      "performance": 64.3,
+      "status": 0
+    },
+    {
+      "id": "string-6",
+      "name": "String 6",
+      "performance": 89.7,
+      "status": 3
+    },
+    {
+      "id": "string-7",
+      "name": "String 7",
+      "performance": 96.8,
+      "status": 0
+    },
+    {
+      "id": "string-8",
+      "name": "String 8",
+      "performance": 99.1,
+      "status": 0
+    },
+    {
+      "id": "string-9",
+      "name": "String 9",
+      "performance": 82.4,
+      "status": 0
+    },
+    {
+      "id": "string-10",
+      "name": "String 10",
+      "performance": 91.6,
+      "status": 0
+    },
+    {
+      "id": "string-11",
+      "name": "String 11",
+      "performance": 75.2,
+      "status": 0
+    },
+    {
+      "id": "string-12",
+      "name": "String 12",
+      "performance": 93.8,
+      "status": 0
+    },
+    {
+      "id": "string-13",
+      "name": "String 13",
+      "performance": 67.9,
+      "status": 3
+    },
+    {
+      "id": "string-14",
+      "name": "String 14",
+      "performance": 88.3,
+      "status": 0
+    },
+    {
+      "id": "string-15",
+      "name": "String 15",
+      "performance": 94.7,
+      "status": 0
+    },
+    {
+      "id": "string-16",
+      "name": "String 16",
+      "performance": 72.1,
+      "status": 0
+    },
+    {
+      "id": "string-17",
+      "name": "String 17",
+      "performance": 85.6,
+      "status": 0
+    },
+    {
+      "id": "string-18",
+      "name": "String 18",
+      "performance": 90.4,
+      "status": 0
+    },
+    {
+      "id": "string-19",
+      "name": "String 19",
+      "performance": 97.2,
+      "status": 0
+    },
+    {
+      "id": "string-20",
+      "name": "String 20",
+      "performance": 98.9,
+      "status": 0
+    }
+  ],
+  "cleaningUnitStatus": {
+    "online": 18,
+    "offline": 2,
+    "total": 20,
+    "cleaning": 0,
+    "faults": 0
+  },
+  "arrayPerformance": {
+    "dirty": 96.64,
+    "cleaningGain": 2.19,
+    "residualLoss": 1.17
+  },
+  "dailyData": [
+    {
+      "day": 1,
+      "dailySoiling": 0.1336,
+      "soilingReference": 99.87,
+      "avgArraySoilingRatio": 100,
+      "soilingLoss": 0,
+      "cleaningGain": 0.13,
+      "daysSinceClean": 0,
+      "cleaningScheduled": 1,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "dailySoiling": 0.1427,
+      "soilingReference": 99.72,
+      "avgArraySoilingRatio": 99.85,
+      "soilingLoss": 0.15,
+      "cleaningGain": 0.13,
+      "daysSinceClean": 1,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.14,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "dailySoiling": 0.1427,
+      "soilingReference": 99.58,
+      "avgArraySoilingRatio": 99.7,
+      "soilingLoss": 0.3,
+      "cleaningGain": 0.13,
+      "daysSinceClean": 2,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.28,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "dailySoiling": 0.1427,
+      "soilingReference": 99.43,
+      "avgArraySoilingRatio": 99.55,
+      "soilingLoss": 0.45,
+      "cleaningGain": 0.13,
+      "daysSinceClean": 3,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "dailySoiling": 0.1427,
+      "soilingReference": 99.29,
+      "avgArraySoilingRatio": 99.4,
+      "soilingLoss": 0.6,
+      "cleaningGain": 0.13,
+      "daysSinceClean": 4,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.57,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "dailySoiling": 0.12629257799631077,
+      "soilingReference": 99.25,
+      "avgArraySoilingRatio": 99.4,
+      "soilingLoss": 0.75,
+      "cleaningGain": 0.1208716153240629,
+      "daysSinceClean": 5,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "dailySoiling": 0.12691544367202764,
+      "soilingReference": 99.1,
+      "avgArraySoilingRatio": 99.28,
+      "soilingLoss": 0.8999999999999999,
+      "cleaningGain": 0.14243943739590204,
+      "daysSinceClean": 6,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.87,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "dailySoiling": 0.17306396981047834,
+      "soilingReference": 98.95,
+      "avgArraySoilingRatio": 99.16,
+      "soilingLoss": 1.05,
+      "cleaningGain": 0.10692611402226092,
+      "daysSinceClean": 7,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.02,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "dailySoiling": 0.1723608209586928,
+      "soilingReference": 98.8,
+      "avgArraySoilingRatio": 99.04,
+      "soilingLoss": 1.2,
+      "cleaningGain": 0.14671898024276203,
+      "daysSinceClean": 8,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.23,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.23,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "dailySoiling": 0.14337075301925647,
+      "soilingReference": 98.65,
+      "avgArraySoilingRatio": 98.92,
+      "soilingLoss": 1.3499999999999999,
+      "cleaningGain": 0.13795825009045512,
+      "daysSinceClean": 9,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "dailySoiling": 0.16719995554277572,
+      "soilingReference": 98.5,
+      "avgArraySoilingRatio": 98.8,
+      "soilingLoss": 1.5,
+      "cleaningGain": 0.1962869337908323,
+      "daysSinceClean": 10,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "dailySoiling": 0.15376461907178265,
+      "soilingReference": 98.35,
+      "avgArraySoilingRatio": 98.68,
+      "soilingLoss": 1.65,
+      "cleaningGain": 0.15689061486054653,
+      "daysSinceClean": 11,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "dailySoiling": 0.13899393452200412,
+      "soilingReference": 98.2,
+      "avgArraySoilingRatio": 98.56,
+      "soilingLoss": 1.7999999999999998,
+      "cleaningGain": 0.14562485350139384,
+      "daysSinceClean": 12,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.75,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "dailySoiling": 0.1366840523298661,
+      "soilingReference": 98.05,
+      "avgArraySoilingRatio": 98.44,
+      "soilingLoss": 1.95,
+      "cleaningGain": 0.12261104594506489,
+      "daysSinceClean": 13,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.96,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.96,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "dailySoiling": 0.1697,
+      "soilingReference": 97.78,
+      "avgArraySoilingRatio": 99.94,
+      "soilingLoss": 0.06,
+      "cleaningGain": 2.16,
+      "daysSinceClean": 0,
+      "cleaningScheduled": 1,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "dailySoiling": 0.16798645279374233,
+      "soilingReference": 99.85,
+      "avgArraySoilingRatio": 99.88,
+      "soilingLoss": 0.15,
+      "cleaningGain": 0.19458842962323497,
+      "daysSinceClean": 1,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.14,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.11,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "dailySoiling": 0.1691083114637264,
+      "soilingReference": 99.7,
+      "avgArraySoilingRatio": 99.76,
+      "soilingLoss": 0.3,
+      "cleaningGain": 0.1269183200401672,
+      "daysSinceClean": 2,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "dailySoiling": 0.1694820555602553,
+      "soilingReference": 99.55,
+      "avgArraySoilingRatio": 99.64,
+      "soilingLoss": 0.44999999999999996,
+      "cleaningGain": 0.19633475817180943,
+      "daysSinceClean": 3,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.48,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "dailySoiling": 0.14401817150668864,
+      "soilingReference": 99.4,
+      "avgArraySoilingRatio": 99.52,
+      "soilingLoss": 0.6,
+      "cleaningGain": 0.10277448504483307,
+      "daysSinceClean": 4,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.56,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.57,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.58,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.58,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "dailySoiling": 0.12685301031704063,
+      "soilingReference": 99.25,
+      "avgArraySoilingRatio": 99.4,
+      "soilingLoss": 0.75,
+      "cleaningGain": 0.12553456498286683,
+      "daysSinceClean": 5,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.73,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "dailySoiling": 0.17322605094895344,
+      "soilingReference": 99.1,
+      "avgArraySoilingRatio": 99.28,
+      "soilingLoss": 0.8999999999999999,
+      "cleaningGain": 0.19846096952548672,
+      "daysSinceClean": 6,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.87,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 22,
+      "dailySoiling": 0.13165331278109443,
+      "soilingReference": 98.95,
+      "avgArraySoilingRatio": 99.16,
+      "soilingLoss": 1.05,
+      "cleaningGain": 0.16766839629991925,
+      "daysSinceClean": 7,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.02,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "dailySoiling": 0.1588,
+      "soilingReference": 98.59,
+      "avgArraySoilingRatio": 98.73,
+      "soilingLoss": 1.27,
+      "cleaningGain": 1.35,
+      "daysSinceClean": 8,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.27,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "dailySoiling": 0.12952843195111807,
+      "soilingReference": 98.65,
+      "avgArraySoilingRatio": 98.92,
+      "soilingLoss": 1.3499999999999999,
+      "cleaningGain": 0.12330031759279259,
+      "daysSinceClean": 9,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "dailySoiling": 0.1609026550013633,
+      "soilingReference": 98.5,
+      "avgArraySoilingRatio": 98.8,
+      "soilingLoss": 1.5,
+      "cleaningGain": 0.19468049653046116,
+      "daysSinceClean": 10,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "dailySoiling": 0.13026892478469965,
+      "soilingReference": 98.35,
+      "avgArraySoilingRatio": 98.68,
+      "soilingLoss": 1.65,
+      "cleaningGain": 0.10064872887884498,
+      "daysSinceClean": 11,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "dailySoiling": 0.12857674285033507,
+      "soilingReference": 98.2,
+      "avgArraySoilingRatio": 98.56,
+      "soilingLoss": 1.7999999999999998,
+      "cleaningGain": 0.11338297640842726,
+      "daysSinceClean": 12,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "dailySoiling": 0.17489261467467423,
+      "soilingReference": 98.05,
+      "avgArraySoilingRatio": 98.44,
+      "soilingLoss": 1.95,
+      "cleaningGain": 0.1615393498441139,
+      "daysSinceClean": 13,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.96,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 29,
+      "dailySoiling": 0.1588,
+      "soilingReference": 97.64,
+      "avgArraySoilingRatio": 99.94,
+      "soilingLoss": 0.06,
+      "cleaningGain": 2.3,
+      "daysSinceClean": 0,
+      "cleaningScheduled": 1,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "dailySoiling": 0.12860943683167686,
+      "soilingReference": 99.85,
+      "avgArraySoilingRatio": 99.88,
+      "soilingLoss": 0.15,
+      "cleaningGain": 0.17184748564311564,
+      "daysSinceClean": 1,
+      "cleaningScheduled": 0,
+      "onlineUnits": 19,
+      "totalUnits": 20,
+      "offline": 1,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.15,
+          "isOffline": true
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "dailySoiling": 0.14080666228009395,
+      "soilingReference": 99.7,
+      "avgArraySoilingRatio": 99.76,
+      "soilingLoss": 0.3,
+      "cleaningGain": 0.13140259948000024,
+      "daysSinceClean": 2,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 32,
+      "dailySoiling": 0.14950960619770812,
+      "soilingReference": 99.55,
+      "avgArraySoilingRatio": 99.64,
+      "soilingLoss": 0.44999999999999996,
+      "cleaningGain": 0.13808192018363422,
+      "daysSinceClean": 3,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.48,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 33,
+      "dailySoiling": 0.16617929936277342,
+      "soilingReference": 99.4,
+      "avgArraySoilingRatio": 99.52,
+      "soilingLoss": 0.6,
+      "cleaningGain": 0.11081376100543552,
+      "daysSinceClean": 4,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.59,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.58,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.59,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.59,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.57,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.6,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 34,
+      "dailySoiling": 0.15343058185681813,
+      "soilingReference": 99.25,
+      "avgArraySoilingRatio": 99.4,
+      "soilingLoss": 0.75,
+      "cleaningGain": 0.17827859104694166,
+      "daysSinceClean": 5,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 35,
+      "dailySoiling": 0.15336368840438264,
+      "soilingReference": 99.1,
+      "avgArraySoilingRatio": 99.28,
+      "soilingLoss": 0.8999999999999999,
+      "cleaningGain": 0.17685649621932498,
+      "daysSinceClean": 6,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.87,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.87,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.87,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 36,
+      "dailySoiling": 0.1484013615036288,
+      "soilingReference": 98.95,
+      "avgArraySoilingRatio": 99.16,
+      "soilingLoss": 1.05,
+      "cleaningGain": 0.11099593327499072,
+      "daysSinceClean": 7,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.01,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 37,
+      "dailySoiling": 0.14057969737902887,
+      "soilingReference": 98.8,
+      "avgArraySoilingRatio": 99.04,
+      "soilingLoss": 1.2,
+      "cleaningGain": 0.1799252278478402,
+      "daysSinceClean": 8,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.23,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.23,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 38,
+      "dailySoiling": 0.15886495698078384,
+      "soilingReference": 98.65,
+      "avgArraySoilingRatio": 98.92,
+      "soilingLoss": 1.3499999999999999,
+      "cleaningGain": 0.11032493180498922,
+      "daysSinceClean": 9,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 39,
+      "dailySoiling": 0.1687932676055383,
+      "soilingReference": 98.5,
+      "avgArraySoilingRatio": 98.8,
+      "soilingLoss": 1.5,
+      "cleaningGain": 0.18538145117499072,
+      "daysSinceClean": 10,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 40,
+      "dailySoiling": 0.16889357380926703,
+      "soilingReference": 98.35,
+      "avgArraySoilingRatio": 98.68,
+      "soilingLoss": 1.65,
+      "cleaningGain": 0.18008817411010325,
+      "daysSinceClean": 11,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.7,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 41,
+      "dailySoiling": 0.1541348513250879,
+      "soilingReference": 98.2,
+      "avgArraySoilingRatio": 98.56,
+      "soilingLoss": 1.7999999999999998,
+      "cleaningGain": 0.17037595053881877,
+      "daysSinceClean": 12,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.81,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.77,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 42,
+      "dailySoiling": 0.15643911833193244,
+      "soilingReference": 98.05,
+      "avgArraySoilingRatio": 98.44,
+      "soilingLoss": 1.95,
+      "cleaningGain": 0.15956405446304478,
+      "daysSinceClean": 13,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.98,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.97,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 43,
+      "dailySoiling": 0.1588,
+      "soilingReference": 97.56,
+      "avgArraySoilingRatio": 99.94,
+      "soilingLoss": 0.06,
+      "cleaningGain": 2.38,
+      "daysSinceClean": 0,
+      "cleaningScheduled": 1,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 44,
+      "dailySoiling": 0.15698980638552235,
+      "soilingReference": 99.85,
+      "avgArraySoilingRatio": 99.88,
+      "soilingLoss": 0.15,
+      "cleaningGain": 0.11109101012079979,
+      "daysSinceClean": 1,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.14,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.11,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.14,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.11,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 45,
+      "dailySoiling": 0.17092457546525489,
+      "soilingReference": 99.7,
+      "avgArraySoilingRatio": 99.76,
+      "soilingLoss": 0.3,
+      "cleaningGain": 0.19848689007402331,
+      "daysSinceClean": 2,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 46,
+      "dailySoiling": 0.13667110166646465,
+      "soilingReference": 99.55,
+      "avgArraySoilingRatio": 99.64,
+      "soilingLoss": 0.44999999999999996,
+      "cleaningGain": 0.13411062583035124,
+      "daysSinceClean": 3,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.4,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.43,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.42,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.41,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.4,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 47,
+      "dailySoiling": 0.13989613392540837,
+      "soilingReference": 99.4,
+      "avgArraySoilingRatio": 99.52,
+      "soilingLoss": 0.6,
+      "cleaningGain": 0.12622162171304865,
+      "daysSinceClean": 4,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.57,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.57,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.56,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.58,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.62,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 48,
+      "dailySoiling": 0.1418018179102983,
+      "soilingReference": 99.25,
+      "avgArraySoilingRatio": 99.4,
+      "soilingLoss": 0.75,
+      "cleaningGain": 0.14382546654294787,
+      "daysSinceClean": 5,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.72,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.71,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.77,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.74,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.73,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.8,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 49,
+      "dailySoiling": 0.170372661163393,
+      "soilingReference": 99.1,
+      "avgArraySoilingRatio": 99.28,
+      "soilingLoss": 0.8999999999999999,
+      "cleaningGain": 0.19431215436648364,
+      "daysSinceClean": 6,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.92,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.88,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.86,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.89,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.85,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.91,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 50,
+      "dailySoiling": 0.16961119939990016,
+      "soilingReference": 98.95,
+      "avgArraySoilingRatio": 99.16,
+      "soilingLoss": 1.05,
+      "cleaningGain": 0.10665452880663506,
+      "daysSinceClean": 7,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.02,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.02,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.08,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 51,
+      "dailySoiling": 0.1610706432160683,
+      "soilingReference": 98.8,
+      "avgArraySoilingRatio": 99.04,
+      "soilingLoss": 1.2,
+      "cleaningGain": 0.1697132452332825,
+      "daysSinceClean": 8,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.15,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.24,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.19,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.21,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.22,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 52,
+      "dailySoiling": 0.1291900259702588,
+      "soilingReference": 98.65,
+      "avgArraySoilingRatio": 98.92,
+      "soilingLoss": 1.3499999999999999,
+      "cleaningGain": 0.1518338700065998,
+      "daysSinceClean": 9,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.39,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.37,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.36,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.38,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 53,
+      "dailySoiling": 0.15301294657105544,
+      "soilingReference": 98.5,
+      "avgArraySoilingRatio": 98.8,
+      "soilingLoss": 1.5,
+      "cleaningGain": 0.17719852358513438,
+      "daysSinceClean": 10,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.54,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.55,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.51,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.48,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.5,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.53,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.52,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 54,
+      "dailySoiling": 0.17277270294680241,
+      "soilingReference": 98.35,
+      "avgArraySoilingRatio": 98.68,
+      "soilingLoss": 1.65,
+      "cleaningGain": 0.18697200493839305,
+      "daysSinceClean": 11,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.68,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.61,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.66,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.67,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.65,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.62,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.64,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.6,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.69,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.63,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.6,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 55,
+      "dailySoiling": 0.1573828573152452,
+      "soilingReference": 98.2,
+      "avgArraySoilingRatio": 98.56,
+      "soilingLoss": 1.7999999999999998,
+      "cleaningGain": 0.1472481115325166,
+      "daysSinceClean": 12,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.8,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.76,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.75,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.84,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.81,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.83,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.81,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.81,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.79,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.78,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.82,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.75,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 56,
+      "dailySoiling": 0.14210435094956234,
+      "soilingReference": 98.05,
+      "avgArraySoilingRatio": 98.44,
+      "soilingLoss": 1.95,
+      "cleaningGain": 0.10588809686774117,
+      "daysSinceClean": 13,
+      "cleaningScheduled": 0,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.96,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.95,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.96,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.91,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.94,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.9,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.93,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.99,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 57,
+      "dailySoiling": 0.1588,
+      "soilingReference": 97.52,
+      "avgArraySoilingRatio": 99.94,
+      "soilingLoss": 0.06,
+      "cleaningGain": 2.42,
+      "daysSinceClean": 0,
+      "cleaningScheduled": 1,
+      "onlineUnits": 20,
+      "totalUnits": 20,
+      "offline": 0,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.08,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.09,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.03,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.07,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.05,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.04,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.06,
+          "isOffline": false
+        }
+      ]
+    },
+    {
+      "day": 58,
+      "dailySoiling": 0.17393679230666828,
+      "soilingReference": 99.85,
+      "avgArraySoilingRatio": 99.88,
+      "soilingLoss": 0.15,
+      "cleaningGain": 0.14075462198784616,
+      "daysSinceClean": 1,
+      "cleaningScheduled": 0,
+      "onlineUnits": 18,
+      "totalUnits": 20,
+      "offline": 2,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.13,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.17,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.2,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.18,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.16,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.11,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.1,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.12,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.2,
+          "isOffline": true
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.13,
+          "isOffline": true
+        }
+      ]
+    },
+    {
+      "day": 59,
+      "dailySoiling": 0.1568201544914294,
+      "soilingReference": 99.7,
+      "avgArraySoilingRatio": 99.76,
+      "soilingLoss": 0.3,
+      "cleaningGain": 0.17447177524065663,
+      "daysSinceClean": 2,
+      "cleaningScheduled": 0,
+      "onlineUnits": 18,
+      "totalUnits": 20,
+      "offline": 2,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 0.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 0.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 0.33,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 0.34,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 0.27,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 0.29,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 0.31,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 0.28,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 0.35,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 0.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 0.25,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 0.3,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 0.32,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 0.26,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 0.28,
+          "isOffline": true
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 0.26,
+          "isOffline": true
+        }
+      ]
+    },
+    {
+      "day": 60,
+      "dailySoiling": 0.1588,
+      "soilingReference": 98.05,
+      "avgArraySoilingRatio": 98.53,
+      "soilingLoss": 1.47,
+      "cleaningGain": 0.42,
+      "daysSinceClean": 3,
+      "cleaningScheduled": 0,
+      "onlineUnits": 18,
+      "totalUnits": 20,
+      "offline": 2,
+      "stringData": [
+        {
+          "stringId": "string-1",
+          "soilingPercentage": 1.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-2",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-3",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-4",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-5",
+          "soilingPercentage": 1.49,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-6",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-7",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-8",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-9",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-10",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-11",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-12",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-13",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-14",
+          "soilingPercentage": 1.46,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-15",
+          "soilingPercentage": 1.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-16",
+          "soilingPercentage": 1.44,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-17",
+          "soilingPercentage": 1.47,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-18",
+          "soilingPercentage": 1.45,
+          "isOffline": false
+        },
+        {
+          "stringId": "string-19",
+          "soilingPercentage": 1.44,
+          "isOffline": true
+        },
+        {
+          "stringId": "string-20",
+          "soilingPercentage": 1.46,
+          "isOffline": true
+        }
+      ]
+    }
+  ]
+}

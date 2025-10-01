@@ -1,0 +1,52 @@
+/* Prevent body scroll */
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.logo {
+  height: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-links {
+  color: white;
+}
+
+.data-link {
+  color: #ed6c02;
+}
+
+.system-link {
+  color: #9c27b0;
+}
+
+.device-link {
+  color: #2e7d32;
+}
+
+.commissioning-link {
+  color: #d32f2f;
+}
+
+.installation-link,
+.signup-link {
+  color: #1976d2;
+}
+
+.maintenance-link {
+  color: #757575;
+}
+
+a > logo {
+  padding: 0px;
+}
