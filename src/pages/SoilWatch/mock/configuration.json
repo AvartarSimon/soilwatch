@@ -1,119 +1,41 @@
 {
-  "_comment_system": "=== SYSTEM INFORMATION ===",
   "systemName": "SoilWatch Configuration",
   "version": "1.0.0",
   "lastUpdated": "2025-10-02",
-  "_usage_system": "This file controls all configurable parameters for the SoilWatch application. Changes take effect immediately after browser refresh.",
 
-  "_comment_cleaning": "=== CLEANING CONFIGURATION ===",
-  "_usage_cleaning": "Used by: StringDetail.tsx (day slider markers), SoilWatchOverview.tsx (cleaning schedule display)",
   "cleaning": {
-    "intervalDays": 14,
-    "description": "Number of days between cleaning cycles",
-    "usage": "Controls orange marker positions on day slider. Day 1 is always a cleaning day, then every N days after. Example: intervalDays=14 creates cleanings on Days 1, 15, 29, 43, 57",
-    "affectedComponents": ["StringDetail day slider", "Performance charts (reset points)", "Cleaning history"],
-
+    "intervalDays": 10,
     "efficiency": 0.97,
-    "description_efficiency": "Average cleaning effectiveness (0.0-1.0, where 1.0 = 100% effective)",
-    "usage_efficiency": "Used in cleaningHistory mock data generation. Determines how much soiling is removed after cleaning",
-
-    "efficiencyVariation": 0.03,
-    "description_efficiencyVariation": "Random variance in cleaning effectiveness",
-    "usage_efficiencyVariation": "Creates realistic variation in cleaning results (0.97 ± 0.03 = 94%-100% effectiveness)",
-
-    "note": "⚠️ IMPORTANT: Changing intervalDays will automatically recalculate the cleaning schedule throughout all 60 days of data"
+    "efficiencyVariation": 0.03
   },
 
-  "_comment_soiling": "=== SOILING ACCUMULATION PARAMETERS ===",
-  "_usage_soiling": "Used by: StringDetail.tsx (mockDailyData generation), Performance calculation formulas",
   "soiling": {
     "nominalRatePerDay": 0.15,
-    "description_nominalRate": "Reference soiling accumulation rate per day (%/day)",
-    "usage_nominalRate": "Display value only - shown in overview dashboard as 'Nominal Soiling Rate' parameter. Not used in calculations",
-    "affectedComponents": ["Overview KPI display"],
-
     "rateVariance": 0.05,
-    "description_rateVariance": "Statistical variance in soiling rate (%/day)",
-    "usage_rateVariance": "Display value only - shown as 'Rate Variance' in overview dashboard",
-
     "dailyAccumulationMin": 0.25,
     "dailyAccumulationMax": 0.6,
-    "description_dailyAccumulation": "Range of soiling percentage added each day (min-max %)",
-    "usage_dailyAccumulation": "⭐ CRITICAL: Used in StringDetail.tsx line 176. Each day, soiling increases by random value between min and max. Formula: accumulatedSoiling += dailyAccumulationMin + Math.random() * (dailyAccumulationMax - dailyAccumulationMin)",
-    "affectedComponents": ["StringDetail performance chart", "Daily soiling loss calculation"],
-    "example": "If min=0.25, max=0.6, then each day adds 0.25%-0.6% soiling. After 10 days: ~2.5%-6% total soiling",
-
     "postCleaningMin": 0.2,
     "postCleaningMax": 0.5,
-    "description_postCleaning": "Residual soiling remaining after cleaning (min-max %)",
-    "usage_postCleaning": "⭐ CRITICAL: Used in StringDetail.tsx line 174. When cleaning occurs, soiling is reset to random value between min and max (not zero). Formula: accumulatedSoiling = postCleaningMin + Math.random() * (postCleaningMax - postCleaningMin)",
-    "affectedComponents": ["StringDetail performance chart (cleaning day reset)"],
-    "rationale": "Real-world cleaning is never 100% effective - some residual dirt remains",
-
-    "maxSoilingLoss": 8.0,
-    "description_maxSoilingLoss": "Maximum total soiling percentage that can accumulate (%)",
-    "usage_maxSoilingLoss": "⭐ CRITICAL: Used in StringDetail.tsx line 179. Caps accumulated soiling. Formula: soilingLoss = Math.min(accumulatedSoiling, maxSoilingLoss)",
-    "affectedComponents": ["Performance calculation cap"],
-    "rationale": "Prevents unrealistic soiling accumulation beyond physical limits",
-
-    "note": "⚠️ Modifying dailyAccumulationMin/Max changes how fast panels get dirty. Modifying postCleaningMin/Max changes cleaning effectiveness. These directly affect the performance curves you see in charts."
+    "maxSoilingLoss": 8.0
   },
 
-  "_comment_ivCurve": "=== IV CURVE GENERATION PARAMETERS ===",
-  "_usage_ivCurve": "Used by: ivCurveGenerator.ts (curve calculation), StringDetail.tsx (IV/PV chart display)",
   "ivCurve": {
     "voc_clean": 400,
-    "description_voc": "Open Circuit Voltage for clean panel (V)",
-    "usage_voc": "⭐ CRITICAL: Used in ivCurveGenerator.ts line 49. Defines the maximum voltage (X-axis endpoint) of IV curve. Typical values: 800V (standard), 1000V (high-voltage), 400V (low-voltage residential)",
-    "affectedComponents": ["IV Curve chart (X-axis max)", "PV Curve chart (X-axis max)", "Voc chip display"],
-    "fileLocation": "ivCurveGenerator.ts:49",
-
     "isc_clean": 100,
-    "description_isc": "Short Circuit Current for clean panel (A)",
-    "usage_isc": "⭐ CRITICAL: Used in ivCurveGenerator.ts line 50. Defines the maximum current (Y-axis start point) of IV curve. Typical values: 450A (utility-scale), 300A (commercial), 10A (residential)",
-    "affectedComponents": ["IV Curve chart (Y-axis max)", "Isc chip display", "Power calculation"],
-    "fileLocation": "ivCurveGenerator.ts:50",
-
     "voltageRangeMin": 0,
     "voltageRangeMax": 450,
-    "description_voltageRange": "Chart display range for voltage axis (V)",
-    "usage_voltageRange": "Controls X-axis limits for IV and PV curve charts. Should be slightly larger than voc_clean for better visualization. Example: if voc_clean=400, set voltageRangeMax=450",
-    "affectedComponents": ["IV Curve X-axis", "PV Curve X-axis"],
-    "tip": "Set max to ~110-115% of voc_clean for optimal chart appearance",
-
     "currentRangeMin": 0,
     "currentRangeMax": 150,
-    "description_currentRange": "Chart display range for current axis (A)",
-    "usage_currentRange": "Controls Y-axis limits for IV curve chart only. Should be slightly larger than isc_clean. Example: if isc_clean=10, set currentRangeMax=12-15",
-    "affectedComponents": ["IV Curve Y-axis only"],
-    "tip": "Set max to ~110-150% of isc_clean depending on desired chart spacing",
-
     "powerRangeMin": 0,
     "powerRangeMax": 160,
-    "description_powerRange": "Chart display range for power axis (kW)",
-    "usage_powerRange": "Controls Y-axis limits for PV curve chart only. Maximum power is approximately (voc_clean × isc_clean) / 1000 × 0.75. Example: (400V × 10A) / 1000 × 0.75 = 3kW, so set powerRangeMax=4-5kW",
-    "affectedComponents": ["PV Curve Y-axis only", "Pmax chip display"],
-    "formula": "Typical Pmax ≈ (Voc × Isc / 1000) × 0.75 (fill factor ~0.75)",
-    "tip": "Calculate as: (voc_clean × isc_clean / 1000) × 0.8-0.9 for safe max range",
-
     "numCurvePoints": 800,
-    "description_numPoints": "Number of data points to generate for each curve",
-    "usage_numPoints": "⭐ Used in ivCurveGenerator.ts line 51. Higher values = smoother curves but slower generation. Range: 50-200. Recommended: 100",
-    "affectedComponents": ["Curve smoothness", "Chart rendering performance"],
-    "performance": "200 points = smooth curves, ~10ms generation time. 200 points = very smooth, ~20ms",
-
     "units": {
       "voltage": "V",
       "current": "A",
       "power": "kW"
-    },
-    "description_units": "Display units for chart labels and tooltips",
-
-    "note": "⚠️ IMPORTANT: When changing voc_clean or isc_clean, also update the corresponding range values (voltageRangeMax, currentRangeMax, powerRangeMax) proportionally to maintain good chart visualization. The curves are calculated mathematically based on voc_clean and isc_clean using a simplified solar panel model."
+    }
   },
 
-  "_comment_performance": "=== PERFORMANCE COLOR THRESHOLDS ===",
-  "_usage_performance": "Used by: SoilWatchOverview.tsx (heatmap coloring), useConfiguration.ts (getPerformanceHue helper)",
   "performance": {
     "thresholds": {
       "excellent": 95,
@@ -122,11 +44,6 @@
       "poor": 80,
       "critical": 0
     },
-    "description_thresholds": "Performance percentage breakpoints for color classification",
-    "usage_thresholds": "⭐ Used in SoilWatchOverview.tsx line 161-177. Determines heatmap card colors based on string performance. Logic: if performance >= excellent (95%), use green; if >= good (90%), use yellow-green; etc.",
-    "affectedComponents": ["Overview page heatmap grid (20 string cards)"],
-    "fileLocation": "SoilWatchOverview.tsx:161-177",
-
     "colors": {
       "excellent": { "hue": 120, "label": "Green" },
       "good": { "hue": 100, "label": "Yellow-Green" },
@@ -134,160 +51,116 @@
       "poor": { "hue": 30, "label": "Orange" },
       "critical": { "hue": 0, "label": "Red" },
       "offline": { "color": "#9E9E9E", "label": "Gray" }
-    },
-    "description_colors": "HSL hue values (0-360) for each performance category",
-    "usage_colors": "Converted to HSL color: hsl(hue, 70%, 85%). Example: hue=120 (excellent) → bright green, hue=0 (critical) → red",
-    "customization": "Change hue values to modify colors. Common hues: 0=red, 30=orange, 60=yellow, 120=green, 210=blue",
-
-    "note": "⚠️ Modifying thresholds changes when colors appear. Example: Changing 'excellent' from 95 to 98 means fewer strings will show as green (stricter standard). Only strings with ≥98% will be green."
+    }
   },
 
-  "_comment_charts": "=== CHART DISPLAY SETTINGS ===",
-  "_usage_charts": "Used by: Chart components to control Y-axis ranges and visual features (NOT FULLY IMPLEMENTED YET)",
   "charts": {
     "soilingLossChart": {
       "yAxisMin": 0,
       "yAxisMax": 8,
       "showThresholdLine": false,
       "thresholdValue": 5.0,
-      "thresholdColor": "#F44336",
-      "description": "Historical Soiling Loss Chart settings (Overview page)",
-      "usage": "🚧 FUTURE FEATURE: Will control Y-axis range and optional warning threshold line at specified soiling percentage"
+      "thresholdColor": "#F44336"
     },
     "cleaningGainChart": {
       "yAxisMin": 0,
-      "yAxisMax": 5,
-      "description": "Cleaning Performance Chart settings (Overview page)",
-      "usage": "🚧 FUTURE FEATURE: Will control Y-axis range for cleaning gain chart"
+      "yAxisMax": 5
     },
     "stringPerformanceChart": {
       "yAxisMin": 70,
       "yAxisMax": 100,
-      "showCleaningMarkers": true,
-      "description": "String Detail Performance Chart settings (Detail page)",
-      "usage": "🚧 FUTURE FEATURE: Will control Y-axis range and whether to show cleaning day markers on performance chart"
-    },
-    "note": "These settings are defined for future use. Currently, charts use hardcoded ranges. To activate these, chart components need to be updated to read from configuration."
+      "showCleaningMarkers": true
+    }
   },
 
-  "_comment_simulation": "=== DATA SIMULATION PARAMETERS ===",
-  "_usage_simulation": "Reference values for mock data generation (NOT ACTIVELY USED - values are hardcoded in soilingModelData.json)",
   "simulation": {
     "totalDays": 60,
-    "description_totalDays": "Total number of days of historical data",
-    "usage_totalDays": "📊 REFERENCE ONLY: Actual data range is defined in soilingModelData.json dailyData array (60 days)",
-
     "totalStrings": 20,
-    "description_totalStrings": "Total number of solar strings in the system",
-    "usage_totalStrings": "📊 REFERENCE ONLY: Actual number defined in soilingModelData.json strings array (20 strings)",
-
     "basePerformanceMin": 64.3,
     "basePerformanceMax": 99.1,
-    "description_basePerformance": "Range of baseline performance values across all strings (%)",
-    "usage_basePerformance": "📊 REFERENCE ONLY: Actual baseline performance is in soilingModelData.json strings[].performance",
-
     "offlineProbability": 0.05,
-    "description_offlineProbability": "Statistical probability of a string being offline on any given day (5%)",
-    "usage_offlineProbability": "📊 REFERENCE ONLY: Actual offline status is in soilingModelData.json dailyData[].stringData[].isOffline",
-
-    "faultProbability": 0.01,
-    "description_faultProbability": "Statistical probability of a fault event occurring (1%)",
-    "usage_faultProbability": "📊 REFERENCE ONLY: Actual fault events are mocked in StringDetail.tsx",
-
-    "note": "⚠️ These are REFERENCE VALUES ONLY. The actual data comes from soilingModelData.json. To change the simulation, you must edit soilingModelData.json directly."
+    "faultProbability": 0.01
   },
 
-  "_comment_display": "=== UI DISPLAY PREFERENCES ===",
-  "_usage_display": "General UI behavior settings (PARTIALLY IMPLEMENTED)",
   "display": {
     "dateFormat": "YYYY-MM-DD",
-    "description_dateFormat": "Date display format",
-    "usage_dateFormat": "📊 REFERENCE ONLY: Dates are currently formatted as toISOString().split('T')[0]",
-
     "decimalPlaces": 1,
-    "description_decimalPlaces": "Number of decimal places for performance percentages",
-    "usage_decimalPlaces": "📊 REFERENCE ONLY: Currently hardcoded as toFixed(1) in components",
-
     "showTooltips": true,
-    "description_showTooltips": "Whether to show chart tooltips on hover",
-    "usage_showTooltips": "📊 REFERENCE ONLY: Tooltips are enabled by default in Chart.js configuration",
-
     "animationDuration": 300,
-    "description_animationDuration": "Chart animation duration in milliseconds",
-    "usage_animationDuration": "📊 REFERENCE ONLY: Currently uses default Chart.js animations",
-
-    "defaultSelectedDay": 30,
-    "description_defaultSelectedDay": "Default day to display when opening detail page",
-    "usage_defaultSelectedDay": "⭐ COULD BE IMPLEMENTED: Currently defaults to maxDay in StringDetail.tsx line 109",
-
-    "note": "These are mostly reference values. To activate, components need updates to read from configuration."
+    "defaultSelectedDay": 30
   },
 
-  "_comment_chartStyles": "=== UNIFIED CHART STYLING ===",
-  "_usage_chartStyles": "Visual styling for chart card containers (READY TO IMPLEMENT)",
   "chartStyles": {
     "cardBackground": "#FFFFFF",
     "cardBackgroundDark": "#1E1E1E",
-    "description_cardBackground": "Chart card background colors for light/dark themes",
-    "usage_cardBackground": "🚧 READY FOR USE: Can be applied to all Card components wrapping charts for unified appearance",
-
     "titleColor": "#1C1C1C",
     "titleColorDark": "#FFFFFF",
-    "description_titleColor": "Chart title text colors for light/dark themes",
-    "usage_titleColor": "🚧 READY FOR USE: Can be applied to Typography variant='h6' components showing chart titles",
-
     "titleFontSize": "16px",
     "titleFontWeight": 600,
-    "description_titleFont": "Consistent title typography",
-    "usage_titleFont": "🚧 READY FOR USE: Apply to all chart title Typography components",
-
     "borderRadius": "12px",
     "boxShadow": "0 4px 16px rgba(0,0,0,0.06)",
-    "padding": "16px",
-    "description_visualEffects": "Visual styling for card containers",
-    "usage_visualEffects": "🚧 READY FOR USE: Apply to all chart Card components for consistent look",
-
-    "note": "✅ IMPLEMENTATION READY: These values are defined and ready to be used in chart components for unified styling across Overview and Detail pages."
+    "padding": "16px"
   },
 
-  "_priority_explanation": {
-    "title": "🔄 DATA PRIORITY AND INTERACTION LOGIC",
-    "summary": "configuration.json vs soilingModelData.json - Which takes precedence?",
+  "_documentation": {
+    "_comment": "=== CONFIGURATION GUIDE ===",
 
-    "rule1_ivCurve": {
-      "winner": "configuration.json (HIGHER PRIORITY)",
-      "explanation": "IV Curve generation ALWAYS uses configuration.json parameters",
-      "details": "When generateIVCurve() is called in StringDetail.tsx line 287, it receives voc_clean and isc_clean from configuration.json. Changing soilingModelData.json will NOT affect IV curve shape, only the performance percentage input.",
-      "affectedCharts": ["IV Curve", "PV Curve"],
-      "fileLocations": ["StringDetail.tsx:281-287", "ivCurveGenerator.ts:49-51"]
+    "cleaning": {
+      "intervalDays": "Days between cleaning cycles. Affects day slider markers and chart reset points.",
+      "efficiency": "Cleaning effectiveness (0.0-1.0). Used in cleaning history generation.",
+      "efficiencyVariation": "Random variance in cleaning results."
     },
 
-    "rule2_cleaningSchedule": {
-      "winner": "MIXED (configuration.json for calculation, soilingModelData.json for historical data)",
-      "explanation": "Cleaning days can be calculated from config OR read from data",
-      "details": "Currently TRANSITIONAL: StringDetail.tsx line 94-101 uses config.cleaning.intervalDays if available, otherwise falls back to reading cleaningScheduled from soilingModelData.json. For full migration, all cleaningScheduled values in soilingModelData.json should align with calculated values from configuration.json.",
-      "affectedComponents": ["Day slider markers (orange dots)", "Performance chart reset points"],
-      "fileLocations": ["StringDetail.tsx:94-101", "useConfiguration.ts:getCleaningDays()"]
+    "soiling": {
+      "dailyAccumulationMin/Max": "⭐ CRITICAL: Daily soiling increase range (%). Higher = faster degradation.",
+      "postCleaningMin/Max": "⭐ CRITICAL: Residual soiling after cleaning (%). Real cleaning never reaches 0%.",
+      "maxSoilingLoss": "⭐ CRITICAL: Maximum total soiling cap (%). Prevents unrealistic accumulation.",
+      "nominalRatePerDay": "Reference value only (not used in calculations).",
+      "rateVariance": "Reference value only (not used in calculations)."
     },
 
-    "rule3_performance": {
-      "winner": "soilingModelData.json (HIGHER PRIORITY)",
-      "explanation": "Actual performance data comes from soilingModelData.json, NOT configuration.json",
-      "details": "Performance values displayed in heatmap and charts are calculated from: strings[].performance (baseline) × (1 - stringData[].soilingPercentage / 100). This data is in soilingModelData.json. configuration.json soiling parameters ONLY affect the mockDailyData generation in StringDetail (which is client-side simulation, not the main data source).",
-      "affectedComponents": ["Heatmap performance values", "All performance displays", "Actual chart data points"],
-      "fileLocations": ["useSoilingModelData.ts:179-183 (getStringPerformanceForDay)"]
+    "ivCurve": {
+      "voc_clean": "⭐ CRITICAL: Open circuit voltage (V). Defines IV curve X-axis endpoint.",
+      "isc_clean": "⭐ CRITICAL: Short circuit current (A). Defines IV curve Y-axis start.",
+      "voltageRangeMax": "Chart X-axis limit. Set to ~110-115% of voc_clean.",
+      "currentRangeMax": "IV curve Y-axis limit. Set to ~110-150% of isc_clean.",
+      "powerRangeMax": "PV curve Y-axis limit. Calculate as (voc × isc / 1000) × 0.8-0.9.",
+      "numCurvePoints": "Curve smoothness. Range: 50-200. Default: 100."
     },
 
-    "rule4_soilingRates": {
-      "winner": "configuration.json for mock generation, soilingModelData.json for display",
-      "explanation": "Soiling accumulation parameters affect StringDetail mock data generation only",
-      "details": "configuration.json soiling.dailyAccumulationMin/Max are used in StringDetail.tsx line 176 to generate mockDailyData for the detail page performance chart. However, the REAL soiling data that feeds into all calculations comes from soilingModelData.json dailyData[].stringData[].soilingPercentage. Changing config affects the SIMULATED curve in detail view; changing JSON affects EVERYTHING.",
-      "affectedComponents": ["StringDetail performance chart (simulated)", "vs. All other performance calculations (real data)"],
-      "fileLocations": ["StringDetail.tsx:164-192 (mock generation)", "soilingModelData.json:stringData[].soilingPercentage"]
+    "performance": {
+      "thresholds": "⭐ Performance % breakpoints for heatmap colors. excellent=95 means ≥95% shows green.",
+      "colors": "HSL hue values (0-360). 0=red, 30=orange, 60=yellow, 120=green."
     },
 
-    "keyTakeaway": "🎯 configuration.json controls HOW things are calculated/displayed (IV curve parameters, thresholds, intervals). soilingModelData.json contains the ACTUAL DATA (performance, soiling percentages, offline status). For most chart changes, you need to modify soilingModelData.json. configuration.json is for tuning the display and calculation methods.",
+    "charts": {
+      "_note": "🚧 FUTURE FEATURE: Not fully implemented yet. Charts currently use hardcoded ranges."
+    },
 
-    "migrationPath": "To make configuration.json fully authoritative, you would need to: (1) Generate soilingModelData.json dynamically from configuration parameters, OR (2) Ensure all components read calculation parameters from config and only use soilingModelData.json for baseline string info."
+    "simulation": {
+      "_note": "📊 REFERENCE ONLY: Actual data comes from soilingModelData.json."
+    },
+
+    "display": {
+      "_note": "📊 PARTIALLY IMPLEMENTED: Most values are reference only."
+    },
+
+    "chartStyles": {
+      "_note": "✅ READY TO USE: Apply these to chart components for unified styling."
+    },
+
+    "_priority": {
+      "ivCurve": "configuration.json controls IV/PV curve shape",
+      "performance": "soilingModelData.json contains actual performance data",
+      "cleaning": "configuration.json calculates schedule, soilingModelData.json has historical data",
+      "soiling": "configuration.json affects StringDetail mock generation only"
+    },
+
+    "_quickStart": {
+      "changeCleaning": "Modify cleaning.intervalDays (e.g., 14 → 7 for weekly cleaning)",
+      "changeIVCurve": "Modify ivCurve.voc_clean and isc_clean, then adjust range values proportionally",
+      "changeSoiling": "Modify soiling.dailyAccumulationMin/Max to control degradation speed",
+      "changeColors": "Modify performance.thresholds to adjust when colors appear"
+    }
   }
 }

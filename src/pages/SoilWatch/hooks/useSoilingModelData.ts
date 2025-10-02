@@ -1,80 +1,20 @@
-import { useState, useEffect, useCallback } from "react";
-import soilingModelDataJson from "../mock/soilingModelData.json";
+import { useState, useCallback } from "react";
+import { useSoilingData } from "../../../contexts/SoilingDataContext";
 
-export interface SoilingModelParameter {
-  name: string;
-  currentValue: number;
-  units: string;
-}
-
-export interface StringPerformance {
-  id: string;
-  name: string;
-  performance: number;
-  status: number;
-}
-
-export interface CleaningUnitStatus {
-  online: number;
-  offline: number;
-  total: number;
-  cleaning: number;
-  faults: number;
-}
-
-export interface ArrayPerformance {
-  dirty: number;
-  cleaningGain: number;
-  residualLoss: number;
-}
-
-export interface StringDailyData {
-  stringId: string;
-  soilingPercentage: number;
-  isOffline: boolean;
-}
-
-export interface DailyData {
-  day: number;
-  dailySoiling: number;
-  soilingReference: number;
-  avgArraySoilingRatio: number;
-  soilingLoss: number;
-  cleaningGain: number;
-  daysSinceClean: number;
-  cleaningScheduled: number;
-  onlineUnits: number;
-  totalUnits: number;
-  offline: number;
-  stringData: StringDailyData[];
-}
-
-export interface SoilingModelData {
-  parameters: SoilingModelParameter[];
-  strings: StringPerformance[];
-  cleaningUnitStatus: CleaningUnitStatus;
-  arrayPerformance: ArrayPerformance;
-  dailyData: DailyData[];
-}
+// Re-export types from context
+export type {
+  SoilingModelParameter,
+  StringPerformance,
+  CleaningUnitStatus,
+  ArrayPerformance,
+  StringDailyData,
+  DailyData,
+  SoilingModelData,
+} from "../../../contexts/SoilingDataContext";
 
 export const useSoilingModelData = () => {
-  const [data, setData] = useState<SoilingModelData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [selectedDay, setSelectedDay] = useState(30); // Default to day 30 to allow full range selection
-
-  useEffect(() => {
-    try {
-      // Simulate loading delay
-      setTimeout(() => {
-        setData(soilingModelDataJson as SoilingModelData);
-        setLoading(false);
-      }, 300);
-    } catch (err) {
-      setError("Failed to load soiling model data");
-      setLoading(false);
-    }
-  }, []);
+  const { data, loading, error } = useSoilingData();
+  const [selectedDay, setSelectedDay] = useState(30);
 
   const getDataForDay = useCallback(
     (day: number) => {

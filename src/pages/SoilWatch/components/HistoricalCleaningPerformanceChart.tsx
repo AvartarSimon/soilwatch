@@ -209,7 +209,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
               variant="h6"
               sx={{
                 fontWeight: 600,
-                color: "#1C1C1C",
+                color: "text.primary",
                 fontSize: "16px",
               }}
             >
@@ -305,7 +305,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "#5A5F6A" }}
+                  sx={{ fontSize: "9px", color: "text.secondary" }}
                 >
                   Soiling Ref
                 </Typography>
@@ -321,7 +321,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "#5A5F6A" }}
+                  sx={{ fontSize: "9px", color: "text.secondary" }}
                 >
                   Cleaning Gain
                 </Typography>

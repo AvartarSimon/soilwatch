@@ -25,6 +25,7 @@ import {
   TableRow,
   TextField,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, LineElement, PointElement, Title, Tooltip } from "chart.js";
 import React, { useMemo, useState } from "react";
@@ -35,6 +36,7 @@ import { useConfiguration } from "./hooks/useConfiguration";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 import { useSoilingModelData } from "./hooks/useSoilingModelData";
 import { generateIVCurve } from "./utils/ivCurveGenerator";
+import { createSeededRandom } from "./utils/seededRandom";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
@@ -79,6 +81,7 @@ const StringDetail: React.FC = () => {
   const { stringId } = useParams<{ stringId: string }>();
   const navigate = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
   const { strings, dailyData, loading, error, getDataForDay, getStringPerformanceForDay, getDailyDataUpToDay, getMaxDay } = useSoilingModelData();
   const { config, getCleaningDays, isCleaningDay } = useConfiguration();
   const { scale } = useResponsiveScale({
@@ -99,7 +102,14 @@ const StringDetail: React.FC = () => {
     // Fallback to data from JSON if config not loaded yet
     return dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day);
   }, [config, getCleaningDays, dailyData]);
-  const today = new Date();
+
+  // Use a stable today value that doesn't change on re-renders
+  const today = useMemo(() => {
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    return date;
+  }, []); // Empty dependency array means this only calculates once
+
   const subtractDays = (date: Date, days: number) => {
     const result = new Date(date);
     result.setDate(result.getDate() - days);
@@ -160,6 +170,10 @@ const StringDetail: React.FC = () => {
     const foundString = strings.find((s) => s.id === stringId);
     if (!foundString) return null;
 
+    // Create a seeded random generator for this specific string
+    // Using stringId as seed ensures consistent data for each string
+    const rng = createSeededRandom(stringId || 'default');
+
     // Check if this string is offline on the selected day
     const dayData = getDataForDay(selectedDay);
     const stringDailyData = dayData?.stringData?.find((sd) => sd.stringId === stringId);
@@ -179,11 +193,11 @@ const StringDetail: React.FC = () => {
       const dayDate = new Date(localToday);
       dayDate.setDate(localToday.getDate() - (maxDay - day.day));
 
-      // Update accumulated soiling
+      // Update accumulated soiling (using seeded random)
       if (day.cleaningScheduled === 1) {
-        accumulatedSoiling = 0.2 + Math.random() * 0.3; // Reset after cleaning
+        accumulatedSoiling = 0.2 + rng.nextFloat(0, 0.3); // Reset after cleaning
       } else {
-        accumulatedSoiling += 0.25 + Math.random() * 0.35; // Daily accumulation
+        accumulatedSoiling += 0.25 + rng.nextFloat(0, 0.35); // Daily accumulation
       }
 
       const soilingLoss = Math.min(accumulatedSoiling, 8);
@@ -197,7 +211,7 @@ const StringDetail: React.FC = () => {
         soiledReference: 95 + soilingLoss,
         powerOutput: 250 + (performance / 100) * 50,
         cleaningScheduled: day.cleaningScheduled,
-        faultEvents: Math.random() > 0.9 ? 1 : 0,
+        faultEvents: rng.next() > 0.9 ? 1 : 0,
       };
     });
 
@@ -230,7 +244,7 @@ const StringDetail: React.FC = () => {
     const lastCleaningData = [...mockDailyData].reverse().find((d) => d.cleaningScheduled === 1);
     const lastCleaningDate = lastCleaningData ? lastCleaningData.date : "N/A";
 
-    // Generate cleaning history based on actual cleaning events
+    // Generate cleaning history based on actual cleaning events (using seeded random)
     const cleaningEvents = mockDailyData.filter((d) => d.cleaningScheduled === 1);
     const mockCleaningHistory = cleaningEvents
       .slice(-5)
@@ -238,18 +252,18 @@ const StringDetail: React.FC = () => {
       .map((event, index) => ({
         date: event.date,
         type: index === 0 ? "Automated" : "Manual",
-        efficiency: 94 + Math.random() * 5,
-        performanceGain: 7 + Math.random() * 6,
+        efficiency: 94 + rng.nextFloat(0, 5),
+        performanceGain: 7 + rng.nextFloat(0, 6),
       }));
 
-    // Determine actual status based on multiple factors
+    // Determine actual status based on multiple factors (using seeded random)
     // Use the offline status from the selected day if available
     const actualFaultCount = isOfflineOnSelectedDay
-      ? Math.floor(Math.random() * 3) + 2 // More faults if offline
+      ? rng.nextInt(2, 4) // More faults if offline (2-4)
       : foundString.performance < 80
-        ? Math.floor(Math.random() * 3) + 1
+        ? rng.nextInt(1, 3) // 1-3 faults
         : foundString.performance < 90
-          ? Math.floor(Math.random() * 2)
+          ? rng.nextInt(0, 1) // 0-1 faults
           : 0;
 
     // Status should reflect offline state on selected day
@@ -270,7 +284,7 @@ const StringDetail: React.FC = () => {
       faultHistory: mockFaultHistory,
       cleaningHistory: mockCleaningHistory,
     } as StringDetailData;
-  }, [stringId, strings, dailyData, selectedDay, getDataForDay, maxDay, today]);
+  }, [stringId, strings, dailyData, selectedDay, getDataForDay, maxDay]);
 
   // Generate IV curve data for selected day performance (must be before early returns)
   const ivData = useMemo(() => {
@@ -467,6 +481,7 @@ const StringDetail: React.FC = () => {
           usePointStyle: true,
           font: { size: 10 },
           padding: 10,
+          color: theme.palette.text.primary,
         },
       },
       tooltip: {
@@ -489,6 +504,13 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Voltage (V)",
           font: { size: 11 },
+          color: theme.palette.text.secondary,
+        },
+        ticks: {
+          color: theme.palette.text.secondary,
+        },
+        grid: {
+          color: theme.palette.divider,
         },
         min: 0,
       },
@@ -500,6 +522,13 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Current (A)",
           font: { size: 11 },
+          color: theme.palette.text.secondary,
+        },
+        ticks: {
+          color: theme.palette.text.secondary,
+        },
+        grid: {
+          color: theme.palette.divider,
         },
         min: 0,
       },
@@ -511,6 +540,10 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Power (kW)",
           font: { size: 11 },
+          color: theme.palette.text.secondary,
+        },
+        ticks: {
+          color: theme.palette.text.secondary,
         },
         grid: {
           drawOnChartArea: false,
@@ -676,7 +709,7 @@ const StringDetail: React.FC = () => {
               >
                 <ArrowBack />
               </IconButton>
-              <Typography variant="h5" sx={{ fontWeight: 600, color: "#1C1C1C" }}>
+              <Typography variant="h5" sx={{ fontWeight: 600, color: "text.primary" }}>
                 {stringData.name}
               </Typography>
               <Chip

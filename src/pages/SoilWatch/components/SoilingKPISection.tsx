@@ -7,7 +7,7 @@ import {
   TrendingUp,
   Warning,
 } from "@mui/icons-material";
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
@@ -63,6 +63,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
   selectedDay,
 }) => {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   // Handle string click navigation
   const handleStringClick = (stringId: string) => {
@@ -122,7 +123,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
         },
         ticks: {
           display: true,
-          color: "#333",
+          color: theme.palette.text.primary,
           font: {
             size: 12,
             weight: "bold" as const,
@@ -139,11 +140,11 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
           display: false,
         },
         grid: {
-          color: "#E0E0E0",
+          color: theme.palette.divider,
         },
         ticks: {
           stepSize: 5,
-          color: "#666",
+          color: theme.palette.text.secondary,
           font: {
             size: 10,
           },
@@ -175,7 +176,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
           font: {
             size: 11,
           },
-          color: "#000",
+          color: theme.palette.text.primary,
         },
       },
       tooltip: {
@@ -219,7 +220,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
             size: 11,
             weight: 500,
           },
-          color: "#000",
+          color: theme.palette.text.primary,
         },
       },
       tooltip: {
@@ -266,7 +267,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
                 variant="h6"
                 sx={{
                   fontWeight: 600,
-                  color: "#1C1C1C",
+                  color: "text.primary",
                   fontSize: "16px",
                 }}
               >
@@ -423,7 +424,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               <CheckCircle sx={{ color: "#6CBF6C", fontSize: 20 }} />
               <Typography
                 variant="h6"
-                sx={{ fontSize: "16px", fontWeight: 600, color: "#1C1C1C" }}
+                sx={{ fontSize: "16px", fontWeight: 600, color: "text.primary" }}
               >
                 Top Rated Performance
               </Typography>
@@ -571,7 +572,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               <Warning sx={{ color: "#F66659", fontSize: 20 }} />
               <Typography
                 variant="h6"
-                sx={{ fontSize: "16px", fontWeight: 600, color: "#1C1C1C" }}
+                sx={{ fontSize: "16px", fontWeight: 600, color: "text.primary" }}
               >
                 Bottom Rated Performance
               </Typography>
@@ -705,7 +706,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
                 variant="h6"
                 sx={{
                   fontWeight: 600,
-                  color: "#1C1C1C",
+                  color: "text.primary",
                   fontSize: "16px",
                 }}
               >
@@ -743,7 +744,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
                 variant="h6"
                 sx={{
                   fontWeight: 600,
-                  color: "#1C1C1C",
+                  color: "text.primary",
                   fontSize: "16px",
                 }}
               >

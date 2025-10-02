@@ -137,7 +137,7 @@ const SoilWatchOverview: React.FC = () => {
                     variant="h6"
                     sx={{
                       fontWeight: 600,
-                      color: "#1C1C1C",
+                      color: "text.primary",
                       fontSize: "16px",
                     }}
                   >
@@ -275,7 +275,7 @@ const SoilWatchOverview: React.FC = () => {
                     variant="h6"
                     sx={{
                       fontWeight: 600,
-                      color: "#1C1C1C",
+                      color: "text.primary",
                       fontSize: "16px",
                     }}
                   >

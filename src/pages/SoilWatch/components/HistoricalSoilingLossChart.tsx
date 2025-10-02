@@ -182,7 +182,7 @@ const HistoricalSoilingLossChart: React.FC<HistoricalSoilingLossChartProps> = ({
               variant="h6"
               sx={{
                 fontWeight: 600,
-                color: "#1C1C1C",
+                color: "text.primary",
                 fontSize: "16px",
               }}
             >
@@ -262,7 +262,7 @@ const HistoricalSoilingLossChart: React.FC<HistoricalSoilingLossChartProps> = ({
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "#5A5F6A" }}
+                  sx={{ fontSize: "9px", color: "text.secondary" }}
                 >
                   Soiling
                 </Typography>
@@ -278,7 +278,7 @@ const HistoricalSoilingLossChart: React.FC<HistoricalSoilingLossChartProps> = ({
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "#5A5F6A" }}
+                  sx={{ fontSize: "9px", color: "text.secondary" }}
                 >
                   Cleaning
                 </Typography>
