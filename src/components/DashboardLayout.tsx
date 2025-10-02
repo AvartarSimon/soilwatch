@@ -73,7 +73,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             variant="h4"
             sx={{
               fontWeight: 700,
-              color: "#3D52E8",
+              color: "#329AE9", // Option 1: Exact Proa logo blue
+              // color: "#1976D2", // Option 2: Material-UI primary blue
+              // color: "#0288D1", // Option 3: Darker professional blue
+              // color: "#00A100", // Option 4: Green (Proa logo secondary)
+              // color: "#2196F3", // Option 5: Light bright blue
+              // color: "#3D52E8", // Option 6: Original color
               fontSize: { xs: "18px", md: "24px" },
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
               letterSpacing: "0.5px"
