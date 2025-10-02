@@ -78,7 +78,7 @@ const StringDetail: React.FC = () => {
   const { stringId } = useParams<{ stringId: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const { strings, dailyData, loading, error, getDataForDay } = useSoilingModelData();
+  const { strings, dailyData, loading, error, getDataForDay, getStringPerformanceForDay, getDailyDataUpToDay, getMaxDay } = useSoilingModelData();
   const { scale } = useResponsiveScale({
     baseWidth: 1920,
     baseHeight: 1080,
@@ -87,20 +87,18 @@ const StringDetail: React.FC = () => {
   });
 
   // Get selectedDay from navigation state, default to latest day
-  const [selectedDay, setSelectedDay] = useState(() => (location.state as any)?.selectedDay || (dailyData.length > 0 ? dailyData[dailyData.length - 1].day : 30));
+  const maxDay = getMaxDay();
+  const cleaningDays = useMemo(() => dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day), [dailyData]);
+  const today = new Date();
+  const subtractDays = (date: Date, days: number) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+  };
+  const formatDate = (date: Date) => date.toISOString().split("T")[0];
+  const [selectedDay, setSelectedDay] = useState(() => (location.state as any)?.selectedDay || maxDay);
 
-  const maxDay = dailyData.length > 0 ? dailyData[dailyData.length - 1].day : 30;
-const cleaningDays = useMemo(() => dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day), [dailyData]);
-
-const today = new Date();
-const subtractDays = (date: Date, days: number) => {
-  const result = new Date(date);
-  result.setDate(result.getDate() - days);
-  return result;
-};
-const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
-// State for add fault dialog
+  // State for add fault dialog
   const [openAddFault, setOpenAddFault] = useState(false);
   const [newFault, setNewFault] = useState({
     type: "",
@@ -159,32 +157,34 @@ const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'sh
 
     // Generate mock detailed data based on the string's basic info
     // Base date: current date (last day = today, day 60)
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Reset time to midnight for consistency
-    const maxDay = dailyData.length > 0 ? Math.max(...dailyData.map((d) => d.day)) : 60;
+    const localToday = new Date(today);
+    localToday.setHours(0, 0, 0, 0);
 
     let accumulatedSoiling = 0;
     const mockDailyData = dailyData.map((day) => {
-      // Calculate date: today minus (maxDay - current day number)
-      const dayDate = new Date(today);
-      dayDate.setDate(today.getDate() - (maxDay - day.day));
+      // Find this string's data for this day
+      const stringDayData = day.stringData?.find((sd) => sd.stringId === stringId);
 
-      // More realistic soiling accumulation and cleaning effect
+      // Calculate date
+      const dayDate = new Date(localToday);
+      dayDate.setDate(localToday.getDate() - (maxDay - day.day));
+
+      // Update accumulated soiling
       if (day.cleaningScheduled === 1) {
-        accumulatedSoiling = 0.2 + Math.random() * 0.3; // More dramatic reset after cleaning
+        accumulatedSoiling = 0.2 + Math.random() * 0.3; // Reset after cleaning
       } else {
-        accumulatedSoiling += 0.25 + Math.random() * 0.35; // Daily soiling accumulation
+        accumulatedSoiling += 0.25 + Math.random() * 0.35; // Daily accumulation
       }
 
-      const soilingLoss = Math.min(accumulatedSoiling, 8); // Cap at 8% for more variation
-      const performance = Math.max(foundString.performance - soilingLoss, 75); // Don't go below 75%
+      const soilingLoss = Math.min(accumulatedSoiling, 8);
+      const performance = stringDayData?.isOffline ? 0 : Math.max(foundString.performance - soilingLoss, 75);
 
       return {
         day: day.day,
         date: dayDate.toISOString().split("T")[0],
         performance: performance,
         soilingLoss: soilingLoss,
-        soiledReference: 95 + soilingLoss, // Reference level showing accumulated soiling from baseline
+        soiledReference: 95 + soilingLoss,
         powerOutput: 250 + (performance / 100) * 50,
         cleaningScheduled: day.cleaningScheduled,
         faultEvents: Math.random() > 0.9 ? 1 : 0,
@@ -260,7 +260,7 @@ const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'sh
       faultHistory: mockFaultHistory,
       cleaningHistory: mockCleaningHistory,
     } as StringDetailData;
-  }, [stringId, strings, dailyData, selectedDay, getDataForDay]);
+  }, [stringId, strings, dailyData, selectedDay, getDataForDay, maxDay, today]);
 
   // Generate IV curve data for selected day performance (must be before early returns)
   const ivData = useMemo(() => {
@@ -635,17 +635,17 @@ const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'sh
               justifyContent: "center",
             }}
           >
-            {/* Back button, header, and day slider in top left */}
+            {/* Back button, header, and day slider */}
             <Box
               sx={{
                 position: "absolute",
                 top: 20,
                 left: 20,
+                right: 20,
                 zIndex: 10,
                 display: "flex",
                 alignItems: "center",
                 gap: 2,
-                width: "80%",
               }}
             >
               <IconButton
@@ -668,7 +668,15 @@ const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'sh
                 variant="outlined"
                 size="small"
               />
-              <Box sx={{ flexGrow: 1, px: 2 }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  px: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                }}
+              >
                 <Slider
                   value={selectedDay}
                   onChange={(_, value) => setSelectedDay(value as number)}
@@ -677,10 +685,50 @@ const formatDate = (date: Date) => date.toLocaleDateString('en-US', { month: 'sh
                   step={1}
                   valueLabelDisplay="auto"
                   valueLabelFormat={(value) => `Day ${value} (${formatDate(subtractDays(today, maxDay - value))})`}
-                  marks={cleaningDays.map((day) => ({ value: day, label: '🧽' }))}
-                  sx={{ color: "#1976D2" }}
+                  marks={cleaningDays.map((day) => ({ value: day, label: "🧽" }))}
+                  sx={{
+                    color: "#1976D2",
+                    flex: 1,
+                    mt: 2,
+                    mx: "auto",
+                    "& .MuiSlider-mark": {
+                      height: "8px",
+                      width: "8px",
+                      borderRadius: "50%",
+                      backgroundColor: "#FFA726",
+                      transform: "translateY(-50%)",
+                      top: "50%",
+                    },
+                    "& .MuiSlider-markLabel": {
+                      display: "none",
+                    },
+                  }}
                 />
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <Timeline sx={{ fontSize: 18, color: "#1976D2" }} />
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#1976D2",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      whiteSpace: "nowrap",
+                      letterSpacing: "0.3px",
+                    }}
+                  >
+                    Day Selector
+                  </Typography>
+                </Box>
               </Box>
+              <Chip
+                label={formatDate(subtractDays(today, maxDay - selectedDay))}
+                color="primary"
+                size="small"
+                sx={{
+                  fontWeight: 600,
+                  fontSize: "13px",
+                }}
+              />
             </Box>
 
             <Grid container spacing={1} sx={{ height: "100%", width: "100%", mt: -1 }}>
