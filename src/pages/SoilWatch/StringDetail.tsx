@@ -687,7 +687,7 @@ const StringDetail: React.FC = () => {
                   valueLabelFormat={(value) => `Day ${value} (${formatDate(subtractDays(today, maxDay - value))})`}
                   marks={cleaningDays.map((day) => ({ value: day, label: "🧽" }))}
                   sx={{
-                    color: "#1976D2",
+                    color: "#329AE9",
                     flex: 1,
                     mt: 2,
                     mx: "auto",
@@ -705,11 +705,11 @@ const StringDetail: React.FC = () => {
                   }}
                 />
                 <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <Timeline sx={{ fontSize: 18, color: "#1976D2" }} />
+                  <Timeline sx={{ fontSize: 18, color: "#329AE9" }} />
                   <Typography
                     variant="body2"
                     sx={{
-                      color: "#1976D2",
+                      color: "#329AE9",
                       fontSize: "13px",
                       fontWeight: 600,
                       whiteSpace: "nowrap",
@@ -722,11 +722,15 @@ const StringDetail: React.FC = () => {
               </Box>
               <Chip
                 label={formatDate(subtractDays(today, maxDay - selectedDay))}
-                color="primary"
                 size="small"
                 sx={{
                   fontWeight: 600,
                   fontSize: "13px",
+                  backgroundColor: "#329AE9",
+                  color: "#FFFFFF",
+                  "&:hover": {
+                    backgroundColor: "#2888D0",
+                  },
                 }}
               />
             </Box>
@@ -1070,7 +1074,19 @@ const StringDetail: React.FC = () => {
                       <Typography variant="h6" sx={{ fontWeight: 600 }}>
                         Recent Fault History
                       </Typography>
-                      <Button variant="contained" size="small" startIcon={<Add />} onClick={handleOpenAddFault} sx={{ textTransform: "none" }}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        startIcon={<Add />}
+                        onClick={handleOpenAddFault}
+                        sx={{
+                          textTransform: "none",
+                          backgroundColor: "#329AE9",
+                          "&:hover": {
+                            backgroundColor: "#2888D0",
+                          },
+                        }}
+                      >
                         ADD
                       </Button>
                     </Box>
@@ -1181,7 +1197,17 @@ const StringDetail: React.FC = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseAddFault}>Cancel</Button>
-          <Button onClick={handleAddFault} variant="contained" disabled={!newFault.type || !newFault.duration}>
+          <Button
+            onClick={handleAddFault}
+            variant="contained"
+            disabled={!newFault.type || !newFault.duration}
+            sx={{
+              backgroundColor: "#329AE9",
+              "&:hover": {
+                backgroundColor: "#2888D0",
+              },
+            }}
+          >
             Add Fault
           </Button>
         </DialogActions>
