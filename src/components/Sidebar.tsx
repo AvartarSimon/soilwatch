@@ -21,7 +21,9 @@ export default function Sidebar({ mobileOpen, onClose }: SidebarProps) {
     {
       to: "/soilwatch",
       label: t("soilwatch"),
-      icon: <SolarPowerIcon sx={{ fontSize: "42px", color: "#FFD700" }} />,
+      icon: <SolarPowerIcon sx={{ fontSize: "42px", color: "#E1B62D" }} />, // +10% yellow +10% bright (current)
+      // icon: <SolarPowerIcon sx={{ fontSize: "42px", color: "#E5C033" }} />, // +20% yellow +15% bright
+      // icon: <SolarPowerIcon sx={{ fontSize: "42px", color: "#DAA520" }} />, // Goldenrod (base)
     },
   ];
 
