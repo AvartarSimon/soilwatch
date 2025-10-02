@@ -215,7 +215,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
               sx={{
                 fontWeight: 600,
                 color: '#1C1C1C',
-                fontSize: '18px',
+                fontSize: '16px',
               }}
             >
               Power Output & Soiling Trend

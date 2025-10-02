@@ -1,7 +1,10 @@
 import {
+  Assessment,
   CheckCircle,
   DevicesOther,
+  Widgets,
   TrendingDown,
+  TrendingUp,
   Warning,
 } from "@mui/icons-material";
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
@@ -159,17 +162,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
     },
     plugins: {
       title: {
-        display: true,
-        text: "Average Cleaning Gain",
-        position: "top" as const,
-        color: "#000000",
-        font: {
-          size: 14,
-          weight: "bold" as const,
-        },
-        padding: {
-          bottom: 5,
-        },
+        display: false,
       },
       legend: {
         display: true,
@@ -214,17 +207,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
     maintainAspectRatio: false,
     plugins: {
       title: {
-        display: true,
-        text: "Cleaning Unit Status",
-        position: "top" as const,
-        color: "#000000",
-        font: {
-          size: 14,
-          weight: "bold" as const,
-        },
-        padding: {
-          bottom: 15,
-        },
+        display: false,
       },
       legend: {
         position: "bottom" as const,
@@ -266,8 +249,6 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
             boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
             border: "1px solid #E6E8EC",
             height: "280px",
-            background:
-              "linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 50%, #FFEBEE 100%)",
           }}
         >
           <CardContent
@@ -278,6 +259,21 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               flexDirection: "column",
             }}
           >
+            {/* Title */}
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <Assessment sx={{ color: "#2196F3", fontSize: 20 }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  color: "#1C1C1C",
+                  fontSize: "16px",
+                }}
+              >
+                Key Metrics
+              </Typography>
+            </Box>
+
             {/* Average Soiling Loss */}
             <Box
               sx={{
@@ -404,7 +400,6 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
             boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
             border: "1px solid #E6E8EC",
             height: "280px",
-            background: "linear-gradient(135deg, #F0F8F0 0%, #F5FBF5 100%)",
           }}
         >
           <CardContent
@@ -428,7 +423,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               <CheckCircle sx={{ color: "#6CBF6C", fontSize: 20 }} />
               <Typography
                 variant="h6"
-                sx={{ fontSize: "14px", fontWeight: 600, color: "#4A8F4A" }}
+                sx={{ fontSize: "16px", fontWeight: 600, color: "#1C1C1C" }}
               >
                 Top Rated Performance
               </Typography>
@@ -553,7 +548,6 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
             boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
             border: "1px solid #E6E8EC",
             height: "280px",
-            background: "linear-gradient(135deg, #FFF0F1 0%, #FDEAED 100%)",
           }}
         >
           <CardContent
@@ -577,7 +571,7 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               <Warning sx={{ color: "#F66659", fontSize: 20 }} />
               <Typography
                 variant="h6"
-                sx={{ fontSize: "14px", fontWeight: 600, color: "#D14343" }}
+                sx={{ fontSize: "16px", fontWeight: 600, color: "#1C1C1C" }}
               >
                 Bottom Rated Performance
               </Typography>
@@ -693,8 +687,8 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
           sx={{
             borderRadius: "12px",
             boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+            border: "1px solid #E6E8EC",
             height: "280px",
-            backgroundColor: "#E8F5E8",
           }}
         >
           <CardContent
@@ -705,6 +699,19 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               flexDirection: "column",
             }}
           >
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <TrendingUp sx={{ color: "#4CAF50", fontSize: 20 }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  color: "#1C1C1C",
+                  fontSize: "16px",
+                }}
+              >
+                Average Cleaning Gain
+              </Typography>
+            </Box>
             <Box sx={{ flex: 1, minHeight: 0 }}>
               <Bar data={cleaningGainData} options={cleaningGainOptions} />
             </Box>
@@ -718,8 +725,8 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
           sx={{
             borderRadius: "12px",
             boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+            border: "1px solid #E6E8EC",
             height: "280px",
-            backgroundColor: "#F0F8E8",
           }}
         >
           <CardContent
@@ -730,6 +737,19 @@ const SoilingKPISection: React.FC<SoilingKPISectionProps> = ({
               flexDirection: "column",
             }}
           >
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+              <Widgets sx={{ color: "#1565C0", fontSize: 20 }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  color: "#1C1C1C",
+                  fontSize: "16px",
+                }}
+              >
+                String Units Status
+              </Typography>
+            </Box>
             <Box sx={{ flex: 1, minHeight: 0, position: "relative" }}>
               <Doughnut data={donutData} options={donutOptions} />
 

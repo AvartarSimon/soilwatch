@@ -26,19 +26,29 @@ export interface IVCurveData {
   fillFactor_soiled: number;
 }
 
+export interface IVCurveConfig {
+  voc_clean?: number;
+  isc_clean?: number;
+  numCurvePoints?: number;
+}
+
 /**
  * Generate IV curve based on performance percentage
  * @param performancePct - Current performance percentage (0-100)
  * @param nominalPower - Nominal power rating in kW (default: 300kW for a string)
+ * @param config - Optional configuration for IV curve parameters
  * @returns IV curve data for both clean and soiled conditions
  */
 export function generateIVCurve(
   performancePct: number,
-  nominalPower: number = 300
+  nominalPower: number = 300,
+  config?: IVCurveConfig
 ): IVCurveData {
   // Standard test conditions parameters for a typical solar string
-  const Voc_clean = 800; // Open circuit voltage (V) - clean condition
-  const Isc_clean = 450; // Short circuit current (A) - clean condition
+  // Can be overridden by config
+  const Voc_clean = config?.voc_clean ?? 800; // Open circuit voltage (V) - clean condition
+  const Isc_clean = config?.isc_clean ?? 450; // Short circuit current (A) - clean condition
+  const numPoints = config?.numCurvePoints ?? 100; // Number of points in the curve
 
   // Calculate soiling impact
   // Soiling primarily affects current (Isc) and slightly affects voltage (Voc)
@@ -50,7 +60,6 @@ export function generateIVCurve(
 
   // Generate clean IV curve
   const cleanCurve: IVCurvePoint[] = [];
-  const numPoints = 100;
 
   for (let i = 0; i <= numPoints; i++) {
     const v = (Voc_clean * i) / numPoints;

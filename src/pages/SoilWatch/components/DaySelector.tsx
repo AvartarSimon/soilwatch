@@ -108,9 +108,9 @@ const DaySelector: React.FC<DaySelectorProps> = ({
         gap: 2,
         px: 3,
         pt: 1,
-        backgroundColor: "#FAFBFC",
         borderBottom: "1px solid #E6E8EC",
-        boxShadow: "0 2px 4px rgba(0,0,0,0.03)",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        borderRadius: "8px",
       }}
     >
       {/* Left side - Time range indicators */}

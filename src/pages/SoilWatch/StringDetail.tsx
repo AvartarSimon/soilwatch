@@ -31,6 +31,7 @@ import React, { useMemo, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Helmet } from "react-helmet-async";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useConfiguration } from "./hooks/useConfiguration";
 import { useResponsiveScale } from "./hooks/useResponsiveScale";
 import { useSoilingModelData } from "./hooks/useSoilingModelData";
 import { generateIVCurve } from "./utils/ivCurveGenerator";
@@ -79,6 +80,7 @@ const StringDetail: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { strings, dailyData, loading, error, getDataForDay, getStringPerformanceForDay, getDailyDataUpToDay, getMaxDay } = useSoilingModelData();
+  const { config, getCleaningDays, isCleaningDay } = useConfiguration();
   const { scale } = useResponsiveScale({
     baseWidth: 1920,
     baseHeight: 1080,
@@ -88,7 +90,15 @@ const StringDetail: React.FC = () => {
 
   // Get selectedDay from navigation state, default to latest day
   const maxDay = getMaxDay();
-  const cleaningDays = useMemo(() => dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day), [dailyData]);
+  // Use configuration to determine cleaning days
+  const cleaningDays = useMemo(() => {
+    // If configuration is loaded, use it to calculate cleaning days
+    if (config) {
+      return getCleaningDays();
+    }
+    // Fallback to data from JSON if config not loaded yet
+    return dailyData.filter((d) => d.cleaningScheduled === 1).map((d) => d.day);
+  }, [config, getCleaningDays, dailyData]);
   const today = new Date();
   const subtractDays = (date: Date, days: number) => {
     const result = new Date(date);
@@ -266,8 +276,16 @@ const StringDetail: React.FC = () => {
   const ivData = useMemo(() => {
     if (!stringData) return null;
     const currentDayData = stringData.dailyData.find((d) => d.day === selectedDay) || stringData.dailyData[stringData.dailyData.length - 1];
-    return generateIVCurve(currentDayData.performance);
-  }, [stringData, selectedDay]);
+
+    // Use configuration for IV curve parameters if available
+    const ivConfig = config?.ivCurve ? {
+      voc_clean: config.ivCurve.voc_clean,
+      isc_clean: config.ivCurve.isc_clean,
+      numCurvePoints: config.ivCurve.numCurvePoints
+    } : undefined;
+
+    return generateIVCurve(currentDayData.performance, 300, ivConfig);
+  }, [stringData, selectedDay, config]);
 
   if (loading) {
     return (

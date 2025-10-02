@@ -95,3 +95,11 @@ export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ chil
     </ThemeContext.Provider>
   );
 };
+
+export const useThemeMode = () => {
+  const context = React.useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error("useThemeMode must be used within a ThemeContextProvider");
+  }
+  return context;
+};

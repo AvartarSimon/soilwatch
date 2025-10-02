@@ -1,7 +1,10 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, IconButton, Toolbar, Typography } from "@mui/material";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { Avatar, Box, IconButton, Toolbar, Tooltip, Typography } from "@mui/material";
 import React from "react";
 import ProaLogo from "../assets/Proalogo.png";
+import { useThemeMode } from "../contexts/ThemeContext";
 import Sidebar from "./Sidebar";
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -10,6 +13,8 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { mode, toggleTheme } = useThemeMode();
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -86,6 +91,44 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           >
             Soil Watch
           </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,
+              position: "absolute",
+              right: 24
+            }}
+          >
+            <Tooltip title={mode === "light" ? "Switch to dark mode" : "Switch to light mode"}>
+              <IconButton
+                onClick={toggleTheme}
+                sx={{
+                  color: "text.primary",
+                  "&:hover": {
+                    backgroundColor: "action.hover"
+                  }
+                }}
+              >
+                {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
+              </IconButton>
+            </Tooltip>
+
+            <Avatar
+              sx={{
+                width: 40,
+                height: 40,
+                bgcolor: "#329AE9",
+                cursor: "pointer",
+                "&:hover": {
+                  opacity: 0.8
+                }
+              }}
+            >
+              U
+            </Avatar>
+          </Box>
         </Toolbar>
       </Box>
 
