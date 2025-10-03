@@ -101,16 +101,17 @@ const DaySelector: React.FC<DaySelectorProps> = ({
   return (
     <Box
       sx={{
-        minHeight: "20px",
-        maxHeight: "6.87vh",
+        minHeight: "60px",
+        maxHeight: "80px",
         display: "flex",
         alignItems: "center",
         gap: 2,
         px: 3,
-        pt: 1,
+        py: 2,
         borderBottom: "1px solid #E6E8EC",
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
         borderRadius: "8px",
+        backgroundColor: "#FFFFFF",
       }}
     >
       {/* Left side - Time range indicators */}
@@ -123,7 +124,7 @@ const DaySelector: React.FC<DaySelectorProps> = ({
           sx={{
             fontSize: "12px",
             fontWeight: 500,
-            color: "#5A5F6A",
+            color: "#1C1C1C",
           }}
         >
           Day {selectedDay}
@@ -175,7 +176,7 @@ const DaySelector: React.FC<DaySelectorProps> = ({
             "& .MuiSlider-markLabel": {
               fontSize: "9px",
               lineHeight: 1.2,
-              color: "#757575",
+              color: "#666666",
               whiteSpace: "pre-line",
               textAlign: "center",
               transform: "translateX(-50%)",
@@ -211,12 +212,18 @@ const DaySelector: React.FC<DaySelectorProps> = ({
           inputProps={{
             min: 1,
             max: maxDay,
-            style: { fontSize: "12px", padding: "4px 8px" },
+            style: { fontSize: "12px", padding: "4px 8px", color: "#1C1C1C" },
           }}
           sx={{
             width: 60,
-            "& .MuiInputLabel-root": { fontSize: "10px" },
-            "& .MuiOutlinedInput-root": { height: 28 },
+            "& .MuiInputLabel-root": { fontSize: "10px", color: "#666666" },
+            "& .MuiOutlinedInput-root": {
+              height: 28,
+              "& fieldset": { borderColor: "#E0E0E0" },
+              "&:hover fieldset": { borderColor: "#1976D2" },
+              "&.Mui-focused fieldset": { borderColor: "#1976D2" },
+            },
+            "& .MuiInputBase-input": { color: "#1C1C1C" },
           }}
         />
 
@@ -239,12 +246,19 @@ const DaySelector: React.FC<DaySelectorProps> = ({
           }}
           sx={{
             width: 120,
-            "& .MuiInputLabel-root": { fontSize: "10px" },
-            "& .MuiOutlinedInput-root": { height: 28 },
+            "& .MuiInputLabel-root": { fontSize: "10px", color: "#666666" },
+            "& .MuiOutlinedInput-root": {
+              height: 28,
+              "& fieldset": { borderColor: "#E0E0E0" },
+              "&:hover fieldset": { borderColor: "#1976D2" },
+              "&.Mui-focused fieldset": { borderColor: "#1976D2" },
+            },
             "& .MuiOutlinedInput-input": {
               fontSize: "11px",
               padding: "4px 6px",
+              color: "#1C1C1C",
             },
+            "& .MuiInputBase-input": { color: "#1C1C1C" },
           }}
         />
 

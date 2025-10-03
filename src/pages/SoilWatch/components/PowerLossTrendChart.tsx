@@ -102,10 +102,10 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
         },
       },
       tooltip: {
-        backgroundColor: theme.palette.background.paper,
-        titleColor: theme.palette.text.primary,
-        bodyColor: theme.palette.text.primary,
-        borderColor: theme.palette.divider,
+        backgroundColor: "#FFFFFF",
+        titleColor: "#1C1C1C",
+        bodyColor: "#1C1C1C",
+        borderColor: "#E0E0E0",
         borderWidth: 1,
         callbacks: {
           title: function(context: any) {
@@ -147,13 +147,13 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
         title: {
           display: true,
           text: 'Date',
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
       },
       y: {
@@ -163,13 +163,13 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
         title: {
           display: true,
           text: 'Power (MW)',
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         min: 0,
       },
@@ -180,13 +180,13 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
         title: {
           display: true,
           text: 'Soil Coverage (%)',
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
           drawOnChartArea: false,
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         min: 0,
         max: 50,
@@ -204,6 +204,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
         boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
         border: "1px solid #E6E8EC",
         height: 500,
+        backgroundColor: "#FFFFFF",
       }}
     >
       <CardContent sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -214,7 +215,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
               variant="h6"
               sx={{
                 fontWeight: 600,
-                color: 'text.primary',
+                color: '#1C1C1C',
                 fontSize: '16px',
               }}
             >
@@ -223,7 +224,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
           </Box>
 
           <Box sx={{ textAlign: 'right' }}>
-            <Typography variant="body2" color="text.secondary" sx={{ fontSize: '11px' }}>
+            <Typography variant="body2" sx={{ color: "#666666", fontSize: '11px' }}>
               Avg Daily Loss
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
@@ -268,7 +269,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
           justifyContent: 'space-around'
         }}>
           <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="body2" color="text.secondary" sx={{ fontSize: '11px' }}>
+            <Typography variant="body2" sx={{ color: "#666666", fontSize: '11px' }}>
               Total Capacity Loss
             </Typography>
             <Typography variant="h6" sx={{ color: '#F44336', fontWeight: 600 }}>
@@ -277,7 +278,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
           </Box>
 
           <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="body2" color="text.secondary" sx={{ fontSize: '11px' }}>
+            <Typography variant="body2" sx={{ color: "#666666", fontSize: '11px' }}>
               Peak Performance Day
             </Typography>
             <Typography variant="h6" sx={{ color: '#4CAF50', fontWeight: 600 }}>
@@ -286,7 +287,7 @@ const PowerLossTrendChart: React.FC<PowerLossTrendChartProps> = ({ dailyPerforma
           </Box>
 
           <Box sx={{ textAlign: 'center' }}>
-            <Typography variant="body2" color="text.secondary" sx={{ fontSize: '11px' }}>
+            <Typography variant="body2" sx={{ color: "#666666", fontSize: '11px' }}>
               Cleaning Events
             </Typography>
             <Typography variant="h6" sx={{ color: '#2196F3', fontWeight: 600 }}>

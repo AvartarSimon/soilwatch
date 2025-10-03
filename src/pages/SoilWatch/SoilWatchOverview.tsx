@@ -26,12 +26,18 @@ const SoilWatchOverview: React.FC = () => {
     getDailyDataUpToDay,
     getMaxDay,
     getStringPerformanceForDay,
+    getArrayPerformanceForDay,
   } = useSoilingModelData();
 
   // Get string performance for the selected day
   const stringsForSelectedDay = useMemo(() => {
     return getStringPerformanceForDay(selectedDay);
   }, [selectedDay, getStringPerformanceForDay]);
+
+  // Get array performance for the selected day
+  const arrayPerformanceForSelectedDay = useMemo(() => {
+    return getArrayPerformanceForDay(selectedDay);
+  }, [selectedDay, getArrayPerformanceForDay]);
 
   // Get cleaning days for the day selector
   const cleaningDays = useMemo(() => {
@@ -92,10 +98,10 @@ const SoilWatchOverview: React.FC = () => {
           <Grid item xs={12}>
             <SoilingKPISection
               avgSoilingLoss={avgSoilingLoss}
-              arrayPerformance={arrayPerformance}
+              arrayPerformance={arrayPerformanceForSelectedDay}
               proaWaspUnits={proaWaspUnits}
               stringFaults={stringFaults}
-              strings={strings}
+              strings={stringsForSelectedDay}
               cleaningUnitStatus={getCleaningUnitStatusForDay(selectedDay)}
               selectedDay={selectedDay}
             />
@@ -114,6 +120,7 @@ const SoilWatchOverview: React.FC = () => {
                 boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                 border: "1px solid #E6E8EC",
                 height: 300,
+                backgroundColor: "#FFFFFF",
               }}
             >
               <CardContent
@@ -128,21 +135,38 @@ const SoilWatchOverview: React.FC = () => {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
+                    justifyContent: "space-between",
                     mb: 1,
                   }}
                 >
-                  <DevicesOther sx={{ color: "#1976D2", fontSize: 20 }} />
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 600,
-                      color: "text.primary",
-                      fontSize: "16px",
-                    }}
-                  >
-                    Strings 1-10
-                  </Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <DevicesOther sx={{ color: "#1976D2", fontSize: 20 }} />
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        color: "#1C1C1C",
+                        fontSize: "16px",
+                      }}
+                    >
+                      Strings 1-10
+                    </Typography>
+                  </Box>
+                  {/* Color Legend */}
+                  <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(0, 90%, 45%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>Low</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(120, 70%, 30%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>High</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(0, 0%, 50%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>Offline</Typography>
+                    </Box>
+                  </Box>
                 </Box>
 
                 <Box
@@ -252,6 +276,7 @@ const SoilWatchOverview: React.FC = () => {
                 boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                 border: "1px solid #E6E8EC",
                 height: 300,
+                backgroundColor: "#FFFFFF",
               }}
             >
               <CardContent
@@ -266,21 +291,38 @@ const SoilWatchOverview: React.FC = () => {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
+                    justifyContent: "space-between",
                     mb: 1,
                   }}
                 >
-                  <DevicesOther sx={{ color: "#1976D2", fontSize: 20 }} />
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 600,
-                      color: "text.primary",
-                      fontSize: "16px",
-                    }}
-                  >
-                    Strings 11-20
-                  </Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <DevicesOther sx={{ color: "#1976D2", fontSize: 20 }} />
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 600,
+                        color: "#1C1C1C",
+                        fontSize: "16px",
+                      }}
+                    >
+                      Strings 11-20
+                    </Typography>
+                  </Box>
+                  {/* Color Legend */}
+                  <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(0, 90%, 45%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>Low</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(120, 70%, 30%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>High</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 0.3 }}>
+                      <Box sx={{ width: 8, height: 8, backgroundColor: "hsl(0, 0%, 50%)", borderRadius: "2px" }} />
+                      <Typography sx={{ fontSize: "8px", color: "#666" }}>Offline</Typography>
+                    </Box>
+                  </Box>
                 </Box>
 
                 <Box

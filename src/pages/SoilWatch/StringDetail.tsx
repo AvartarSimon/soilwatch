@@ -15,7 +15,6 @@ import {
   Grid,
   IconButton,
   MenuItem,
-  Paper,
   Slider,
   Table,
   TableBody,
@@ -33,7 +32,6 @@ import { Line } from "react-chartjs-2";
 import { Helmet } from "react-helmet-async";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useConfiguration } from "./hooks/useConfiguration";
-import { useResponsiveScale } from "./hooks/useResponsiveScale";
 import { useSoilingModelData } from "./hooks/useSoilingModelData";
 import { generateIVCurve } from "./utils/ivCurveGenerator";
 import { createSeededRandom } from "./utils/seededRandom";
@@ -84,12 +82,6 @@ const StringDetail: React.FC = () => {
   const theme = useTheme();
   const { strings, dailyData, loading, error, getDataForDay, getStringPerformanceForDay, getDailyDataUpToDay, getMaxDay } = useSoilingModelData();
   const { config, getCleaningDays, isCleaningDay } = useConfiguration();
-  const { scale } = useResponsiveScale({
-    baseWidth: 1920,
-    baseHeight: 1080,
-    minScale: 0.4,
-    maxScale: 1.5,
-  });
 
   // Get selectedDay from navigation state, default to latest day
   const maxDay = getMaxDay();
@@ -172,7 +164,7 @@ const StringDetail: React.FC = () => {
 
     // Create a seeded random generator for this specific string
     // Using stringId as seed ensures consistent data for each string
-    const rng = createSeededRandom(stringId || 'default');
+    const rng = createSeededRandom(stringId || "default");
 
     // Check if this string is offline on the selected day
     const dayData = getDataForDay(selectedDay);
@@ -292,11 +284,13 @@ const StringDetail: React.FC = () => {
     const currentDayData = stringData.dailyData.find((d) => d.day === selectedDay) || stringData.dailyData[stringData.dailyData.length - 1];
 
     // Use configuration for IV curve parameters if available
-    const ivConfig = config?.ivCurve ? {
-      voc_clean: config.ivCurve.voc_clean,
-      isc_clean: config.ivCurve.isc_clean,
-      numCurvePoints: config.ivCurve.numCurvePoints
-    } : undefined;
+    const ivConfig = config?.ivCurve
+      ? {
+          voc_clean: config.ivCurve.voc_clean,
+          isc_clean: config.ivCurve.isc_clean,
+          numCurvePoints: config.ivCurve.numCurvePoints,
+        }
+      : undefined;
 
     return generateIVCurve(currentDayData.performance, 300, ivConfig);
   }, [stringData, selectedDay, config]);
@@ -395,6 +389,16 @@ const StringDetail: React.FC = () => {
       legend: {
         display: true,
         position: "top" as const,
+        labels: {
+          usePointStyle: true,
+          pointStyle: "rect" as const,
+          padding: 6,
+          font: {
+            size: 9,
+          },
+          boxWidth: 8,
+          boxHeight: 8,
+        },
       },
       tooltip: {
         callbacks: {
@@ -479,9 +483,12 @@ const StringDetail: React.FC = () => {
         position: "top" as const,
         labels: {
           usePointStyle: true,
-          font: { size: 10 },
-          padding: 10,
-          color: theme.palette.text.primary,
+          pointStyle: "rect" as const,
+          font: { size: 8 },
+          padding: 4,
+          color: "#1C1C1C",
+          boxWidth: 8,
+          boxHeight: 8,
         },
       },
       tooltip: {
@@ -504,13 +511,13 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Voltage (V)",
           font: { size: 11 },
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
         },
         min: 0,
       },
@@ -522,13 +529,13 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Current (A)",
           font: { size: 11 },
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
         },
         min: 0,
       },
@@ -540,10 +547,10 @@ const StringDetail: React.FC = () => {
           display: true,
           text: "Power (kW)",
           font: { size: 11 },
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
         },
         grid: {
           drawOnChartArea: false,
@@ -655,366 +662,371 @@ const StringDetail: React.FC = () => {
 
       <Box
         sx={{
-          ml: "-5vw",
-          mt: -2,
-          width: "100vw",
-          height: "100vh",
-          overflow: "hidden",
+          width: "100%",
+          pt: 0,
+          px: 2,
+          pb: 0,
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          flexDirection: "column",
         }}
       >
-        <Box
+        {/* Back button, header, and day slider */}
+        <Card
           sx={{
-            width: 1920,
-            height: 1080,
-            transform: `scale(${scale})`,
-            transformOrigin: "center center",
-            overflow: "visible",
+            borderRadius: "12px",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+            border: "1px solid #E6E8EC",
+            backgroundColor: "#FFFFFF",
+            mb: 2,
+            width: "calc(100% - 8px)",
           }}
         >
           <Box
             sx={{
-              width: "100%",
-              height: "100%",
-              pt: 4,
-              mt: -2,
               display: "flex",
-              flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
+              gap: 2,
+              py: 0.8,
+              px: { xs: 1, sm: 1.5, lg: 2 },
             }}
           >
-            {/* Back button, header, and day slider */}
+            <IconButton
+              onClick={() => navigate(-1)}
+              size="small"
+              sx={{
+                color: "#1976D2",
+                backgroundColor: "rgba(25,118,210,0.08)",
+                "&:hover": { backgroundColor: "rgba(25,118,210,0.12)" },
+              }}
+            >
+              <ArrowBack sx={{ fontSize: { xs: 18, lg: 24 } }} />
+            </IconButton>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 600,
+                color: "#1C1C1C",
+                fontSize: { xs: "16px", sm: "18px", lg: "24px" },
+              }}
+            >
+              {stringData.name}
+            </Typography>
+            <Chip
+              icon={stringData.status === 1 ? <CheckCircle /> : <Warning />}
+              label={stringData.status === 1 ? "Online" : "Offline"}
+              color={stringData.status === 1 ? "success" : "error"}
+              variant="outlined"
+              size="small"
+            />
             <Box
               sx={{
-                position: "absolute",
-                top: 20,
-                left: 20,
-                right: 20,
-                zIndex: 10,
+                flexGrow: 1,
+                px: 2,
                 display: "flex",
                 alignItems: "center",
                 gap: 2,
               }}
             >
-              <IconButton
-                onClick={() => navigate(-1)}
+              <Slider
+                value={selectedDay}
+                onChange={(_, value) => setSelectedDay(value as number)}
+                min={1}
+                max={maxDay}
+                step={1}
+                valueLabelDisplay="auto"
+                valueLabelFormat={(value) => `Day ${value} (${formatDate(subtractDays(today, maxDay - value))})`}
+                marks={cleaningDays.map((day) => ({ value: day, label: "🧽" }))}
                 sx={{
-                  color: "#1976D2",
-                  backgroundColor: "rgba(255,255,255,0.9)",
-                  "&:hover": { backgroundColor: "rgba(255,255,255,1)" },
-                }}
-              >
-                <ArrowBack />
-              </IconButton>
-              <Typography variant="h5" sx={{ fontWeight: 600, color: "text.primary" }}>
-                {stringData.name}
-              </Typography>
-              <Chip
-                icon={stringData.status === 1 ? <CheckCircle /> : <Warning />}
-                label={stringData.status === 1 ? "Online" : "Offline"}
-                color={stringData.status === 1 ? "success" : "error"}
-                variant="outlined"
-                size="small"
-              />
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  px: 2,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 2,
-                }}
-              >
-                <Slider
-                  value={selectedDay}
-                  onChange={(_, value) => setSelectedDay(value as number)}
-                  min={1}
-                  max={maxDay}
-                  step={1}
-                  valueLabelDisplay="auto"
-                  valueLabelFormat={(value) => `Day ${value} (${formatDate(subtractDays(today, maxDay - value))})`}
-                  marks={cleaningDays.map((day) => ({ value: day, label: "🧽" }))}
-                  sx={{
-                    color: "#329AE9",
-                    flex: 1,
-                    mt: 2,
-                    mx: "auto",
-                    "& .MuiSlider-mark": {
-                      height: "8px",
-                      width: "8px",
-                      borderRadius: "50%",
-                      backgroundColor: "#FFA726",
-                      transform: "translateY(-50%)",
-                      top: "50%",
-                    },
-                    "& .MuiSlider-markLabel": {
-                      display: "none",
-                    },
-                  }}
-                />
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <Timeline sx={{ fontSize: 18, color: "#329AE9" }} />
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#329AE9",
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      whiteSpace: "nowrap",
-                      letterSpacing: "0.3px",
-                    }}
-                  >
-                    Day Selector
-                  </Typography>
-                </Box>
-              </Box>
-              <Chip
-                label={formatDate(subtractDays(today, maxDay - selectedDay))}
-                size="small"
-                sx={{
-                  fontWeight: 600,
-                  fontSize: "13px",
-                  backgroundColor: "#329AE9",
-                  color: "#FFFFFF",
-                  "&:hover": {
-                    backgroundColor: "#2888D0",
+                  color: "#329AE9",
+                  flex: 1,
+                  mt: 2,
+                  mx: "auto",
+                  "& .MuiSlider-mark": {
+                    height: "8px",
+                    width: "8px",
+                    borderRadius: "50%",
+                    backgroundColor: "#FFA726",
+                    transform: "translateY(-50%)",
+                    top: "50%",
+                  },
+                  "& .MuiSlider-markLabel": {
+                    display: "none",
                   },
                 }}
               />
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <Timeline sx={{ fontSize: { xs: 14, lg: 18 }, color: "#329AE9" }} />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#329AE9",
+                    fontSize: { xs: "10px", lg: "13px" },
+                    fontWeight: 600,
+                    whiteSpace: "nowrap",
+                    letterSpacing: "0.3px",
+                    display: { xs: "none", sm: "block" },
+                  }}
+                >
+                  Day Selector
+                </Typography>
+              </Box>
             </Box>
+            <Chip
+              label={formatDate(subtractDays(today, maxDay - selectedDay))}
+              size="small"
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "10px", lg: "13px" },
+                backgroundColor: "#329AE9",
+                color: "#FFFFFF",
+                "&:hover": {
+                  backgroundColor: "#2888D0",
+                },
+              }}
+            />
+          </Box>
+        </Card>
 
-            <Grid container spacing={1} sx={{ height: "100%", width: "100%", mt: -1 }}>
-              {/* KPI Cards Row - All in first row */}
-              <Grid item xs={12} sx={{ mb: -20, mt: 10 }}>
-                <Grid container spacing={1}>
-                  <Grid item xs={2}>
-                    <Card
+        <Grid container spacing={1} sx={{ width: "100%" }}>
+          {/* KPI Cards Row - All in first row */}
+          <Grid item xs={12}>
+            <Grid container spacing={1}>
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: { xs: 1, lg: 1.5 } }}>
+                    <Box
                       sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
                       }}
                     >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <Analytics
-                            sx={{
-                              color: (() => {
-                                const performance = stringData.performance;
-                                if (performance >= 95) return "#4CAF50"; // Green for excellent
-                                if (performance >= 90) return "#8BC34A"; // Light green for good
-                                if (performance >= 80) return "#FFC107"; // Yellow for moderate
-                                if (performance >= 70) return "#FF9800"; // Orange for poor
-                                return "#F44336"; // Red for very poor
-                              })(),
-                              fontSize: 20,
-                            }}
-                          />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Performance (Current)
-                          </Typography>
-                        </Box>
-                        <Typography
-                          variant="h4"
-                          sx={{
-                            fontWeight: 700,
-                            color: (() => {
-                              const performance = stringData.performance;
-                              if (performance >= 95) return "#4CAF50"; // Green for excellent
-                              if (performance >= 90) return "#8BC34A"; // Light green for good
-                              if (performance >= 80) return "#FFC107"; // Yellow for moderate
-                              if (performance >= 70) return "#FF9800"; // Orange for poor
-                              return "#F44336"; // Red for very poor
-                            })(),
-                          }}
-                        >
-                          {stringData.performance.toFixed(1)}%
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={2}>
-                    <Card
+                      <Analytics
+                        sx={{
+                          color: (() => {
+                            const performance = stringData.performance;
+                            if (performance >= 95) return "#4CAF50"; // Green for excellent
+                            if (performance >= 90) return "#8BC34A"; // Light green for good
+                            if (performance >= 80) return "#FFC107"; // Yellow for moderate
+                            if (performance >= 70) return "#FF9800"; // Orange for poor
+                            return "#F44336"; // Red for very poor
+                          })(),
+                          fontSize: { xs: 16, lg: 20 },
+                        }}
+                      />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: { xs: "10px", lg: "12px" } }}>
+                        Performance (Current)
+                      </Typography>
+                    </Box>
+                    <Typography
+                      variant="h4"
                       sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
+                        fontWeight: 700,
+                        fontSize: { xs: "20px", lg: "28px" },
+                        color: (() => {
+                          const performance = stringData.performance;
+                          if (performance >= 95) return "#4CAF50"; // Green for excellent
+                          if (performance >= 90) return "#8BC34A"; // Light green for good
+                          if (performance >= 80) return "#FFC107"; // Yellow for moderate
+                          if (performance >= 70) return "#FF9800"; // Orange for poor
+                          return "#F44336"; // Red for very poor
+                        })(),
                       }}
                     >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <TrendingDown sx={{ color: "#FF9800", fontSize: 20 }} />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Soiling Loss (Accumulated)
-                          </Typography>
-                        </Box>
-                        <Typography variant="h4" sx={{ fontWeight: 700, color: "#FF9800" }}>
-                          {stringData.soilingLoss.toFixed(1)}%
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={2}>
-                    <Card
-                      sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
-                      }}
-                    >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <ElectricBolt sx={{ color: "#4CAF50", fontSize: 20 }} />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Power Output (Real-time)
-                          </Typography>
-                        </Box>
-                        <Typography variant="h4" sx={{ fontWeight: 700, color: "#4CAF50" }}>
-                          {stringData.powerOutput}kW
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: "10px" }}>
-                          Expected: {stringData.expectedPower}kW
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={2}>
-                    <Card
-                      sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
-                      }}
-                    >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <CleaningServices sx={{ color: "#2196F3", fontSize: 20 }} />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Cleaning Efficiency (Avg)
-                          </Typography>
-                        </Box>
-                        <Typography variant="h4" sx={{ fontWeight: 700, color: "#2196F3" }}>
-                          {stringData.cleaningEfficiency.toFixed(1)}%
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={2}>
-                    <Card
-                      sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
-                      }}
-                    >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <Warning sx={{ color: "#F44336", fontSize: 20 }} />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Active Faults
-                          </Typography>
-                        </Box>
-                        <Typography variant="h4" sx={{ fontWeight: 700, color: "#F44336" }}>
-                          {stringData.faultCount}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={2}>
-                    <Card
-                      sx={{
-                        height: 108,
-                        borderRadius: "12px",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                        border: "1px solid #E6E8EC",
-                      }}
-                    >
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 1,
-                            mb: 1,
-                          }}
-                        >
-                          <Timeline sx={{ color: "#9C27B0", fontSize: 20 }} />
-                          <Typography variant="body2" color="text.secondary" sx={{ fontSize: "12px" }}>
-                            Last Cleaning
-                          </Typography>
-                        </Box>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            fontWeight: 700,
-                            color: "#9C27B0",
-                            fontSize: "26px",
-                          }}
-                        >
-                          {stringData.lastCleaning}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Grid>
+                      {stringData.performance.toFixed(1)}%
+                    </Typography>
+                  </CardContent>
+                </Card>
               </Grid>
 
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: 1.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <TrendingDown sx={{ color: "#FF9800", fontSize: 20 }} />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: "12px" }}>
+                        Soiling Loss (Accumulated)
+                      </Typography>
+                    </Box>
+                    <Typography variant="h4" sx={{ fontWeight: 700, color: "#FF9800" }}>
+                      {stringData.soilingLoss.toFixed(1)}%
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: 1.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <ElectricBolt sx={{ color: "#4CAF50", fontSize: 20 }} />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: "12px" }}>
+                        Power Output (Real-time)
+                      </Typography>
+                    </Box>
+                    <Typography variant="h4" sx={{ fontWeight: 700, color: "#4CAF50" }}>
+                      {stringData.powerOutput}kW{" "}
+                      <Typography component="span" variant="body2" sx={{ color: "#666666", fontSize: "10px" }}>
+                        (Exp: {stringData.expectedPower}kW)
+                      </Typography>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: 1.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <CleaningServices sx={{ color: "#2196F3", fontSize: 20 }} />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: "12px" }}>
+                        Cleaning Efficiency (Avg)
+                      </Typography>
+                    </Box>
+                    <Typography variant="h4" sx={{ fontWeight: 700, color: "#2196F3" }}>
+                      {stringData.cleaningEfficiency.toFixed(1)}%
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: 1.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <Warning sx={{ color: "#F44336", fontSize: 20 }} />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: "12px" }}>
+                        Active Faults
+                      </Typography>
+                    </Box>
+                    <Typography variant="h4" sx={{ fontWeight: 700, color: "#F44336" }}>
+                      {stringData.faultCount}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={4} lg={2}>
+                <Card
+                  sx={{
+                    height: { xs: 90, lg: 108 },
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+                    border: "1px solid #E6E8EC",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                >
+                  <CardContent sx={{ p: 1.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb: 1,
+                      }}
+                    >
+                      <Timeline sx={{ color: "#9C27B0", fontSize: 20 }} />
+                      <Typography variant="body2" sx={{ color: "#666666", fontSize: "12px" }}>
+                        Last Cleaning
+                      </Typography>
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 700,
+                        color: "#9C27B0",
+                        fontSize: "26px",
+                      }}
+                    >
+                      {stringData.lastCleaning}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          {/* Second Row - Three Charts */}
+          <Grid item xs={12}>
+            <Grid container spacing={1}>
               {/* Soiling Status & Cleaning Reference Chart */}
-              <Grid item xs={12} lg={4} sx={{ mb: -15, mt: -15 }}>
+              <Grid item xs={12} lg={4}>
                 <Card
                   sx={{
                     borderRadius: "12px",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                     border: "1px solid #E6E8EC",
-                    height: 315,
+                    height: { xs: 250, sm: 280, lg: 315 },
+                    backgroundColor: "#FFFFFF",
                   }}
                 >
                   <CardContent
@@ -1025,7 +1037,7 @@ const StringDetail: React.FC = () => {
                       flexDirection: "column",
                     }}
                   >
-                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, fontSize: "14px" }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, fontSize: "14px", color: "#1C1C1C" }}>
                       Soiling Status & Cleaning Reference (Last 30 Days)
                     </Typography>
                     <Box sx={{ flex: 1, minHeight: 0 }}>
@@ -1036,13 +1048,14 @@ const StringDetail: React.FC = () => {
               </Grid>
 
               {/* IV Curve Chart */}
-              <Grid item xs={12} lg={4} sx={{ mb: -15, mt: -15 }}>
+              <Grid item xs={12} lg={4}>
                 <Card
                   sx={{
                     borderRadius: "12px",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                     border: "1px solid #E6E8EC",
-                    height: 315,
+                    height: { xs: 250, sm: 280, lg: 315 },
+                    backgroundColor: "#FFFFFF",
                   }}
                 >
                   <CardContent
@@ -1054,7 +1067,7 @@ const StringDetail: React.FC = () => {
                     }}
                   >
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 600, fontSize: "14px" }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600, fontSize: "14px", color: "#1C1C1C" }}>
                         IV Curve (Day {selectedDay})
                       </Typography>
                       <Box sx={{ display: "flex", gap: 1 }}>
@@ -1070,13 +1083,14 @@ const StringDetail: React.FC = () => {
               </Grid>
 
               {/* PV Curve Chart */}
-              <Grid item xs={12} lg={4} sx={{ mb: -15, mt: -15 }}>
+              <Grid item xs={12} lg={4}>
                 <Card
                   sx={{
                     borderRadius: "12px",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                     border: "1px solid #E6E8EC",
-                    height: 315,
+                    height: { xs: 250, sm: 280, lg: 315 },
+                    backgroundColor: "#FFFFFF",
                   }}
                 >
                   <CardContent
@@ -1088,7 +1102,7 @@ const StringDetail: React.FC = () => {
                     }}
                   >
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 600, fontSize: "14px" }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600, fontSize: "14px", color: "#1C1C1C" }}>
                         PV Curve (Day {selectedDay})
                       </Typography>
                       <Box sx={{ display: "flex", gap: 1 }}>
@@ -1102,15 +1116,21 @@ const StringDetail: React.FC = () => {
                   </CardContent>
                 </Card>
               </Grid>
+            </Grid>
+          </Grid>
 
+          {/* Third Row - Two Tables */}
+          <Grid item xs={12}>
+            <Grid container spacing={1}>
               {/* Fault History Table */}
-              <Grid item xs={12} lg={6} sx={{ mb: -15, mt: -15 }}>
+              <Grid item xs={12} lg={6}>
                 <Card
                   sx={{
                     borderRadius: "12px",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                     border: "1px solid #E6E8EC",
-                    height: 315,
+                    height: { xs: 250, sm: 280, lg: 315 },
+                    backgroundColor: "#FFFFFF",
                   }}
                 >
                   <CardContent sx={{ p: 1.5 }}>
@@ -1122,7 +1142,7 @@ const StringDetail: React.FC = () => {
                         mb: 2,
                       }}
                     >
-                      <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600, color: "#1C1C1C" }}>
                         Recent Fault History
                       </Typography>
                       <Button
@@ -1141,23 +1161,23 @@ const StringDetail: React.FC = () => {
                         ADD
                       </Button>
                     </Box>
-                    <TableContainer component={Paper} elevation={0}>
+                    <TableContainer sx={{ backgroundColor: "transparent" }}>
                       <Table size="small">
                         <TableHead>
                           <TableRow>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Timestamp</TableCell>
-                            <TableCell>Duration (min)</TableCell>
-                            <TableCell>Status</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Type</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Timestamp</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Duration (min)</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Status</TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>
                           {[...additionalFaults, ...stringData.faultHistory].map((fault) => (
                             <TableRow key={fault.id}>
-                              <TableCell>{fault.type}</TableCell>
-                              <TableCell>{fault.timestamp}</TableCell>
-                              <TableCell>{fault.duration}</TableCell>
-                              <TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{fault.type}</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{fault.timestamp}</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{fault.duration}</TableCell>
+                              <TableCell sx={{ borderColor: "#E0E0E0" }}>
                                 <Chip label={fault.resolved ? "Resolved" : "Active"} color={fault.resolved ? "success" : "error"} size="small" />
                               </TableCell>
                             </TableRow>
@@ -1170,36 +1190,37 @@ const StringDetail: React.FC = () => {
               </Grid>
 
               {/* Cleaning History Table */}
-              <Grid item xs={12} lg={6} sx={{ mb: -15, mt: -15 }}>
+              <Grid item xs={12} lg={6}>
                 <Card
                   sx={{
                     borderRadius: "12px",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
                     border: "1px solid #E6E8EC",
-                    height: 315,
+                    height: { xs: 250, sm: 280, lg: 315 },
+                    backgroundColor: "#FFFFFF",
                   }}
                 >
                   <CardContent sx={{ p: 1.5 }}>
-                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: "#1C1C1C" }}>
                       Cleaning History
                     </Typography>
-                    <TableContainer component={Paper} elevation={0}>
+                    <TableContainer sx={{ backgroundColor: "transparent" }}>
                       <Table size="small">
                         <TableHead>
                           <TableRow>
-                            <TableCell>Date</TableCell>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Efficiency (%)</TableCell>
-                            <TableCell>Performance Gain (%)</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Date</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Type</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Efficiency (%)</TableCell>
+                            <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>Performance Gain (%)</TableCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>
                           {stringData.cleaningHistory.map((cleaning, index) => (
                             <TableRow key={index}>
-                              <TableCell>{cleaning.date}</TableCell>
-                              <TableCell>{cleaning.type}</TableCell>
-                              <TableCell>{cleaning.efficiency.toFixed(1)}%</TableCell>
-                              <TableCell>+{cleaning.performanceGain.toFixed(1)}%</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{cleaning.date}</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{cleaning.type}</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>{cleaning.efficiency.toFixed(1)}%</TableCell>
+                              <TableCell sx={{ color: "#1C1C1C", borderColor: "#E0E0E0" }}>+{cleaning.performanceGain.toFixed(1)}%</TableCell>
                             </TableRow>
                           ))}
                         </TableBody>
@@ -1209,8 +1230,8 @@ const StringDetail: React.FC = () => {
                 </Card>
               </Grid>
             </Grid>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Box>
 
       {/* Add Fault Dialog */}

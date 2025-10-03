@@ -78,11 +78,11 @@ const HistoricalCleaningPerformanceChart: React.FC<
         display: false,
       },
       tooltip: {
-        backgroundColor: theme.palette.background.paper,
-        titleColor: theme.palette.text.primary,
-        bodyColor: theme.palette.text.primary,
-        footerColor: theme.palette.text.primary,
-        borderColor: theme.palette.divider,
+        backgroundColor: "#FFFFFF",
+        titleColor: "#1C1C1C",
+        bodyColor: "#1C1C1C",
+        footerColor: "#1C1C1C",
+        borderColor: "#E0E0E0",
         borderWidth: 1,
         callbacks: {
           title: function (context: any) {
@@ -118,13 +118,13 @@ const HistoricalCleaningPerformanceChart: React.FC<
           display: false,
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
           drawOnChartArea: true,
         },
         ticks: {
           display: true,
           maxTicksLimit: selectedDay,
-          color: theme.palette.text.secondary,
+          color: "#666666",
           font: {
             size: 10,
           },
@@ -135,18 +135,18 @@ const HistoricalCleaningPerformanceChart: React.FC<
         title: {
           display: true,
           text: "Average Soiling Ratio (%)",
-          color: theme.palette.text.secondary,
+          color: "#666666",
           font: {
             size: 12,
             weight: 500,
           },
         },
         grid: {
-          color: theme.palette.divider,
+          color: "#E0E0E0",
           drawOnChartArea: true,
         },
         ticks: {
-          color: theme.palette.text.secondary,
+          color: "#666666",
           font: {
             size: 11,
           },
@@ -185,6 +185,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
         boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
         border: "1px solid #E6E8EC",
         height: 300,
+        backgroundColor: "#FFFFFF",
       }}
     >
       <CardContent
@@ -209,7 +210,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
               variant="h6"
               sx={{
                 fontWeight: 600,
-                color: "text.primary",
+                color: "#1C1C1C",
                 fontSize: "16px",
               }}
             >
@@ -217,8 +218,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
             </Typography>
             <Typography
               variant="h6"
-              color="text.secondary"
-              sx={{ fontSize: "14px", fontWeight: 400, ml: 1 }}
+              sx={{ color: "#666666", fontSize: "14px", fontWeight: 400, ml: 1 }}
             >
               Day 1-{selectedDay}
             </Typography>
@@ -229,8 +229,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "10px" }}
+                sx={{ color: "#666666", fontSize: "10px" }}
               >
                 Avg Soiling Ref
               </Typography>
@@ -245,8 +244,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "10px" }}
+                sx={{ color: "#666666", fontSize: "10px" }}
               >
                 Avg Cleaning Gain
               </Typography>
@@ -261,8 +259,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "10px" }}
+                sx={{ color: "#666666", fontSize: "10px" }}
               >
                 Total Performance
               </Typography>
@@ -277,8 +274,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontSize: "10px" }}
+                sx={{ color: "#666666", fontSize: "10px" }}
               >
                 Cleaning Cycles
               </Typography>
@@ -305,7 +301,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "text.secondary" }}
+                  sx={{ fontSize: "9px", color: "#666666" }}
                 >
                   Soiling Ref
                 </Typography>
@@ -321,7 +317,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
                 />
                 <Typography
                   variant="body2"
-                  sx={{ fontSize: "9px", color: "text.secondary" }}
+                  sx={{ fontSize: "9px", color: "#666666" }}
                 >
                   Cleaning Gain
                 </Typography>
@@ -349,7 +345,7 @@ const HistoricalCleaningPerformanceChart: React.FC<
               variant="body2"
               sx={{
                 fontSize: "10px",
-                color: theme.palette.text.secondary,
+                color: "#666666",
                 fontWeight: 500,
               }}
             >

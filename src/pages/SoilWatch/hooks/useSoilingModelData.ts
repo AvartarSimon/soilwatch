@@ -88,6 +88,22 @@ export const useSoilingModelData = () => {
     [data],
   );
 
+  const getArrayPerformanceForDay = useCallback(
+    (day: number) => {
+      if (!data) return { dirty: 0, cleaningGain: 0, residualLoss: 0 };
+
+      const dayData = getDataForDay(day);
+      if (!dayData) return data.arrayPerformance;
+
+      return {
+        dirty: dayData.soilingReference,
+        cleaningGain: dayData.cleaningGain,
+        residualLoss: 100 - dayData.avgArraySoilingRatio,
+      };
+    },
+    [data, getDataForDay],
+  );
+
   const getStringPerformanceForDay = useCallback(
     (day: number): StringPerformance[] => {
       if (!data) return [];
@@ -165,5 +181,6 @@ export const useSoilingModelData = () => {
     getMaxDay,
     getParameterByName,
     getStringPerformanceForDay,
+    getArrayPerformanceForDay,
   };
 };
